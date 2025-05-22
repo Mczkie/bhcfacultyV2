@@ -1,0 +1,62 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="custom-sidenav">
+    <div class="sidenav-profile">
+      <div class="avatar">
+        <img 
+          src="bhclogo.png"
+          alt="Avatar"
+          style="width: 80px; height: 80px; border-radius: 50%;"
+        class="avatar-image"
+        />
+      </div>
+      <p class="portal-title">Faculty Portal</p>
+    </div>
+    <hr style="margin-bottom: 20px" />
+    <mat-nav-list style="text-align: center">
+      <div class="nav-link" routerLink="/dashboard/todo-list" routerLinkActive="active">
+        <mat-icon>list</mat-icon><span>Todo-list</span>
+      </div>
+      <div class="nav-link" routerLink="/dashboard/classes" routerLinkActive="active">
+        <mat-icon>class</mat-icon><span>Classes</span>
+      </div>
+      <div class="nav-link" routerLink="/dashboard/classes" routerLinkActive="active">
+        <mat-icon>assignment</mat-icon><span>Faculty Evaluation</span>
+      </div>
+      <div class="nav-link" routerLink="/dashboard/classes" routerLinkActive="active">
+        <mat-icon>class</mat-icon><span>Classes</span>
+      </div>
+      <hr />
+      <div class="nav-link" routerLink="/dashboard/assignments" routerLinkActive="active">
+        <mat-icon>logout</mat-icon><span>Logout</span>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="toolbar-container">
+      <mat-toolbar class="toolbar">
+        <div class="toolbar-content">
+          <h2 class="user-name" style="font-size: 16px">
+            {{ details[0].name }}
+          </h2>
+          <p style="font-size: 16px">{{ details[0].domain }}</p>
+        </div>
+      </mat-toolbar>
+    </div>
+
+    <div style="padding: 20px">
+      <h1>
+        My Classroom<mat-icon
+          class="laptop-icon"
+          fontIcon="laptop"
+          style="vertical-align: middle; padding: 5px; border-radius: 5px"
+        ></mat-icon>
+      </h1>
+      <p style="color: #000; font-size: 15px">
+        12:41 AM | 12th October 2023
+      </p>
+      <hr />
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
