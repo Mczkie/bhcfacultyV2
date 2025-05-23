@@ -1,0 +1,13 @@
+<div class="card-container">
+  <mat-card class="custom-card" *ngFor="let classItem of classes">
+    <div class="card-header">
+      <p class="class-code">Class Code: {{ classItem.classCode }}</p>
+      <h2 class="class-title">{{ classItem.className }}</h2>
+      <p class="class-time">{{ classItem.classDate }}</p>
+      <p class="class-room"> {{ classItem.classRoom }}</p>
+    </div>
+    <div class="card-footer">
+      <button mat-stroked-button color="primary">Enter ›</button>
+    </div>
+  </mat-card>
+</div>
