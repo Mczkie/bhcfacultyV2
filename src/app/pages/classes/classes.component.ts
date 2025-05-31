@@ -9,7 +9,7 @@ import {
   MatCardSubtitle, 
   MatCardTitle,
 } from '@angular/material/card';
-import { MatIcon } from '@angular/material/icon';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-classes',
@@ -17,7 +17,7 @@ import { MatIcon } from '@angular/material/icon';
     MatCard,
     MatCardModule,
     CommonModule,
-    MatIcon
+    MatIconModule
   ],
   standalone: true,
   templateUrl: './classes.component.html',

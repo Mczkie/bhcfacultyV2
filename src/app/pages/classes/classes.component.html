@@ -1,14 +1,11 @@
 <h1>
-        Classes<mat-icon
-          class="laptop-icon"
-          fontIcon="laptop"
-          style="vertical-align: middle; padding: 5px; border-radius: 5px"
-        ></mat-icon>
-      </h1>
-      <p style="color: #000; font-size: 15px">
-        12:41 AM | 12th October 2023
-      </p>
-      <hr />
+  Classes
+  <span>
+    <mat-icon>assignment</mat-icon>
+  </span>
+</h1>
+<p style="color: #000; font-size: 15px">12:41 AM | 12th October 2023</p>
+<hr />
 
 <div class="card-container">
   <mat-card class="custom-card" *ngFor="let classItem of classes">
@@ -16,7 +13,7 @@
       <p class="class-code">Class Code: {{ classItem.classCode }}</p>
       <h2 class="class-title">{{ classItem.className }}</h2>
       <p class="class-time">{{ classItem.classDate }}</p>
-      <p class="class-room"> {{ classItem.classRoom }}</p>
+      <p class="class-room">{{ classItem.classRoom }}</p>
     </div>
     <div class="card-footer">
       <button mat-stroked-button color="primary">Enter ›</button>
