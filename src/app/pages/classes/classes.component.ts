@@ -9,13 +9,15 @@ import {
   MatCardSubtitle, 
   MatCardTitle,
 } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-classes',
   imports: [
     MatCard,
     MatCardModule,
-    CommonModule
+    CommonModule,
+    MatIcon
   ],
   standalone: true,
   templateUrl: './classes.component.html',
