@@ -22,23 +22,8 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
   standalone: true,
   templateUrl: './classes.component.html',
   styleUrl: './classes.component.css',
-
-  template: `
-    <h1>Classes</h1>
-  `
 })
 export class ClassesComponent {
-  openDialog() {
-    
-    
-  }
-
-   time = new Date();
-   currentDate = this.time.toLocaleDateString('en-US', {  
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  });
 
 
   classes = [
