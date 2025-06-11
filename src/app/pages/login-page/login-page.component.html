@@ -1,0 +1,55 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Faculty Portal</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <!-- Username Field -->
+      <mat-form-field appearance="outline" class="full-width" color="primary">
+        <mat-label style="font-size: 12px; margin-left: 5px;">Username</mat-label>
+        <span matPrefix>&nbsp;</span>
+        <input matInput formControlName="username" />
+        <span matSuffix>&#64;gordoncollege.edu.ph</span>
+        <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+          You must enter a value
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password Field -->
+      <mat-form-field appearance="outline" class="full-width" color="primary">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+          [attr.aria-label]="'Hide password'"
+        >
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          You must enter a value
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Login Button -->
+      <button
+        class="login-button"
+        mat-flat-button
+        color="primary"
+        [disabled]="loginForm.invalid"
+        (click)="onLogins()"
+      >
+        Login
+      </button>
+    </form>
+
+    <p class="login-footer">
+      Kindly use the <a href="#">link</a> provided to access the previous website.
+    </p>
+  </div>
+</div>

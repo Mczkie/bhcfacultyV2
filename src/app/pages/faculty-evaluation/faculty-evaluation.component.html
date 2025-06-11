@@ -1,20 +1,27 @@
-<h1>
-  Faculty Evaluation
-</h1>
-<p style="color: #000; font-size: 15px">Vote Wisely to your coordinator</p>
-<hr />
 
-<div class="card-container" *ngIf="!childActive">
-  <mat-card class="custom-card" *ngFor="let faculty of facultyClass">
-    <div class="card-header">
-      <p class="class-code">Class Code: {{ faculty.classCode }}</p>
-      <h2 class="class-title">{{ faculty.className }}</h2>
-      <p class="class-time">{{ faculty.classDate }}</p>
-      <p class="class-room">{{ faculty.classRoom }}</p>
-    </div>
-    <div class="card-footer">
-      <button mat-stroked-button color="primary" (click)="goToClass(faculty.routePath)">Vote ›</button>
-    </div>
-</mat-card>
-</div>
-<router-outlet (activate)="onActiveChild()" (deactivate)="onDeactivateChild()"></router-outlet>
+  <h1>Class and Faculty Evaluation</h1>
+  <p style="color: #000; font-size: 15px">
+    Feedback on Instructor's classroom management
+  </p>
+  <hr />
+
+  <div class="card-container" *ngIf="!childActive" [@slideInLeft]>
+    <mat-card class="custom-card" *ngFor="let faculty of facultyClass">
+      <div class="card-header">
+        <p class="class-code">Class Code: {{ faculty.classCode }}</p>
+        <h2 class="class-title">{{ faculty.className }}</h2>
+        <p class="class-time">{{ faculty.classDate }}</p>
+        <p class="class-room">{{ faculty.classRoom }}</p>
+      </div>
+      <div class="card-footer">
+        <button mat-stroked-button (click)="goToClass(faculty.routePath)">
+          Evaluate >
+        </button>
+      </div>
+    </mat-card>
+  </div>
+  <router-outlet
+    (activate)="onActiveChild()"
+    (deactivate)="onDeactivateChild()"
+  ></router-outlet>
+

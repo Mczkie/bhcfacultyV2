@@ -8,10 +8,17 @@ import { ThesisWriting2Component } from './pages/faculty-evaluation/facultyClass
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard/classes',
+    redirectTo: 'Bataan-heroes-lamp',
     pathMatch: 'full',
   },
   {
+    path: 'Bataan-heroes-lamp',
+    loadComponent: () =>
+      import('./pages/login-page/login-page.component').then(
+        (m) => m.LoginPageComponent
+      ),
+      children: [
+         {
     path: 'dashboard',
     component: DashboardComponent,
     children: [
@@ -102,5 +109,7 @@ export const routes: Routes = [
         ],
       },
     ],
+  },
+      ]
   },
 ];

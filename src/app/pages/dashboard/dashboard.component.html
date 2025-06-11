@@ -21,6 +21,7 @@
       </div>
       <div class="nav-link" routerLink="/dashboard/faculty-evaluation" routerLinkActive="active">
         <mat-icon>assignment</mat-icon><span>Faculty Evaluation</span>
+        
       </div>
 
       <hr />
@@ -42,7 +43,7 @@
       </mat-toolbar>
     </div>
 
-    <div style="padding: 20px">
+    <div style="padding: 20px" [@fadeIn]>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
