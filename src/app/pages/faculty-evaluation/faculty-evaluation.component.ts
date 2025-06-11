@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { Router, RouterOutlet } from '@angular/router';
-import { trigger, transition, style, animate } from '@angular/animations';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -21,22 +19,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterOutlet,
   ],
 
-  animations: [
-  trigger('slideInLeft', [
-    transition(':enter', [
-      style({ transform: 'translateX(-100%)', opacity: 0 }),
-      animate('300ms ease-out', style({ transform: 'translateX(0)', opacity: 1 })),
-    ]),
-    transition(':leave', [
-      animate('300ms ease-in', style({ transform: 'translateX(-100%)', opacity: 0 })),
-    ]),
-  ]),
-],
+
   templateUrl: './faculty-evaluation.component.html',
   styleUrls: ['./faculty-evaluation.component.css'],
 })
 export class FacultyEvaluationComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   childActive = false;
 
@@ -79,14 +67,14 @@ export class FacultyEvaluationComponent {
   ];
 
   goToClass(path: string) {
-    this.router.navigate(['dashboard', 'faculty-evaluation', path]);
+    this.router.navigate([path], {relativeTo: this.route});
   }
 
-  onActiveChild() {
-    this.childActive = true;
-  }
+   onActiveChild() {
+     this.childActive = true;
+   }
 
-  onDeactivateChild() {
-    this.childActive = false;
+   onDeactivateChild() {
+     this.childActive = false;
   }
 }

@@ -17,11 +17,16 @@ export const routes: Routes = [
       import('./pages/login-page/login-page.component').then(
         (m) => m.LoginPageComponent
       ),
-      children: [
-         {
-    path: 'dashboard',
+  },
+  {
+    path: 'Bataan-heroes-lamp/dashboard',
     component: DashboardComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'classes',
+        pathMatch: 'full',
+      },
       {
         path: 'todo-list',
         component: TodoListComponent,
@@ -39,32 +44,32 @@ export const routes: Routes = [
           },
           {
             path: 'discrete-mathematics',
-            loadComponent: () => 
+            loadComponent: () =>
               import(
                 './pages/classes/classPages/discrete-mathematics/discrete-mathematics.component'
-              ).then(m => m.DiscreteMathematicsComponent)
+              ).then((m) => m.DiscreteMathematicsComponent),
           },
           {
             path: 'practicum2',
-            loadComponent: () => 
-            import(
-              './pages/classes/classPages/practicum2/practicum2.component'
-            ).then(m => m.Practicum2Component)
+            loadComponent: () =>
+              import(
+                './pages/classes/classPages/practicum2/practicum2.component'
+              ).then((m) => m.Practicum2Component),
           },
           {
             path: 'intelligent-systems-lec',
-            loadComponent: () => 
-            import(
-              './pages/classes/classPages/intelligent-systems-lec/intelligent-systems-lec.component'
-            ).then(m => m.IntelligentSystemsLecComponent)
+            loadComponent: () =>
+              import(
+                './pages/classes/classPages/intelligent-systems-lec/intelligent-systems-lec.component'
+              ).then((m) => m.IntelligentSystemsLecComponent),
           },
           {
             path: 'intelligent-systems-lab',
-            loadComponent: () => 
+            loadComponent: () =>
               import(
                 './pages/classes/classPages/intelligent-systems-lab/intelligent-systems-lab.component'
-              ).then(m => m.IntelligentSystemsLabComponent)
-          }
+              ).then((m) => m.IntelligentSystemsLabComponent),
+          },
         ],
       },
       {
@@ -80,36 +85,34 @@ export const routes: Routes = [
           },
           {
             path: 'discrete-mathematics',
-            loadComponent: () => 
+            loadComponent: () =>
               import(
                 './pages/faculty-evaluation/facultyClass/discrete-mathematics/discrete-mathematics.component'
-              ).then(m => m.DiscreteMathematicsComponent)
+              ).then((m) => m.DiscreteMathematicsComponent),
           },
           {
             path: 'practicum2',
-            loadComponent: () => 
-            import(
-              './pages/faculty-evaluation/facultyClass/practicum2/practicum2.component'
-            ).then(m => m.Practicum2Component)
+            loadComponent: () =>
+              import(
+                './pages/faculty-evaluation/facultyClass/practicum2/practicum2.component'
+              ).then((m) => m.Practicum2Component),
           },
           {
             path: 'intelligent-system-lec',
-            loadComponent: () => 
-            import(
-              './pages/faculty-evaluation/facultyClass/intelligent-systems-lec/intelligent-systems-lec.component'
-            ).then(m => m.IntelligentSystemsLecComponent)
+            loadComponent: () =>
+              import(
+                './pages/faculty-evaluation/facultyClass/intelligent-systems-lec/intelligent-systems-lec.component'
+              ).then((m) => m.IntelligentSystemsLecComponent),
           },
           {
             path: 'intelligent-systems-lab',
-            loadComponent: () => 
+            loadComponent: () =>
               import(
                 './pages/faculty-evaluation/facultyClass/intelligent-systems-lab/intelligent-systems-lab.component'
-              ).then(m => m.IntelligentSystemsLabComponent)
-          }
+              ).then((m) => m.IntelligentSystemsLabComponent),
+          },
         ],
       },
     ],
-  },
-      ]
   },
 ];

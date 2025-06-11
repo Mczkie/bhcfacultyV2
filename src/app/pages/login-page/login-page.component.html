@@ -8,7 +8,7 @@
         <mat-label style="font-size: 12px; margin-left: 5px;">Username</mat-label>
         <span matPrefix>&nbsp;</span>
         <input matInput formControlName="username" />
-        <span matSuffix>&#64;gordoncollege.edu.ph</span>
+        <span matSuffix>&#64;bhc.com.ph</span>
         <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
           You must enter a value
         </mat-error>
@@ -41,8 +41,8 @@
         class="login-button"
         mat-flat-button
         color="primary"
-        [disabled]="loginForm.invalid"
-        (click)="onLogins()"
+        (click)="onLogin()"
+        
       >
         Login
       </button>

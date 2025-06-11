@@ -10,7 +10,7 @@ import {
   MatCardTitle,
 } from '@angular/material/card';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -28,7 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './classes.component.css',
 })
 export class ClassesComponent {
-  constructor(private router: Router) {}
+  
 
   childActive = false;
 
@@ -70,8 +70,10 @@ export class ClassesComponent {
     },
   ];
 
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
   goToClass(path: string) {
-    this.router.navigate(['dashboard', 'classes', path]);
+    this.router.navigate([path], { relativeTo: this.route});
   }
 
   onActiveChild() {
