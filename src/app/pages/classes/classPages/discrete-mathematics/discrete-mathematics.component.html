@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 <div class="class-header">
   <div class="class-info">
     <h1 class="class-title">Discrete Mathematics</h1>
@@ -21,7 +24,36 @@
   <div class="content-area">
     <div *ngIf="isActiveTab('Class Feed')">
       <div class="class-create-posts">
+        <h1>Create Post</h1>
+        <mat-icon class="user-icon">
+          account_circle
+        </mat-icon>
+        <mat-form-field class="post-input">
+          <mat-label>What's on your mind?</mat-label>
+          <input matInput placeholder="Write your post...">
+        </mat-form-field>
 
+        <button matMiniFab class="btn-elevated">
+          <mat-icon class="img-icon">
+            add_photo_alternate
+          </mat-icon>
+        </button>
+
+        <button matMiniFab class="btn-elevated-2">
+          <mat-icon class="img-icon-2">
+            video_call
+          </mat-icon>
+        </button>
+
+        <button matMiniFab class="btn-elevated-3">
+          <mat-icon class="img-icon-3">
+            attach_file
+          </mat-icon>
+        </button>
+
+        <button matButton="elevated" class="btn-elevated-4">
+          Posts
+        </button>
       </div>
     </div>
     <div *ngIf="isActiveTab('Activities/Resources')">
