@@ -1,8 +1,11 @@
-<h1>
-  Classes
-</h1>
-<p style="color: #000; font-size: 15px">12:41 AM | 12th October 2023</p>
-<hr />
+<div *ngIf="!childActive">
+  <h1>
+    Classes
+  </h1>
+  <p style="color: #000; font-size: 15px">12:41 AM | 12th October 2023</p>
+  <hr />
+</div>
+
 
 <div class="card-container" *ngIf="!childActive">
   <mat-card class="custom-card" *ngFor="let classItem of classes">

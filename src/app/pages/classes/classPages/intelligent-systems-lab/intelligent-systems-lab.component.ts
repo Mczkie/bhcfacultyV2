@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-intelligent-systems-lab',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './intelligent-systems-lab.component.html',
   styleUrl: './intelligent-systems-lab.component.css'
 })
 export class IntelligentSystemsLabComponent {
+  activeTab: string = 'Class Feed';
 
+  setActiveTab(tabName: string): void {
+    this.activeTab = tabName;
+  }
+
+  isActiveTab(tabName: string): boolean {
+    return this.activeTab === tabName;
+  }
 }

@@ -1,1 +1,39 @@
-<p>practicum2 works!</p>
+<div class="class-header">
+  <div class="class-info">
+    <h1 class="class-title">Practicum 2</h1>
+    <p class="class-code">Class Code: 12345</p>
+    <p class="class-schedule">M - T, 08:00 am - 05:00 pm</p>
+  </div>
+</div>
+
+<div class="class-contents">
+  <div class="class-nav">
+    <div class="nav-item" [class.active]="isActiveTab('Class Feed')" (click)="setActiveTab('Class Feed')">Class Feed</div>
+    <div class="nav-item" [class.active]="isActiveTab('Activities/Resources')" (click)="setActiveTab('Activities/Resources')">Activities/Resources</div>
+    <div class="nav-item" [class.active]="isActiveTab('Student Works')" (click)="setActiveTab('Student Works')">Student Works</div>
+    <div class="nav-item" [class.active]="isActiveTab('Class List')" (click)="setActiveTab('Class List')">Class List</div>
+    <div class="nav-item" [class.active]="isActiveTab('Messaging')" (click)="setActiveTab('Messaging')">Messaging</div>
+  </div>
+  <div class="content-area">
+    <div *ngIf="isActiveTab('Class Feed')">
+      <h2>Class Feed</h2>
+      <p>Welcome to the Practicum 2 class feed. Recent announcements and updates will appear here.</p>
+    </div>
+    <div *ngIf="isActiveTab('Activities/Resources')">
+      <h2>Activities & Resources</h2>
+      <p>Access class activities and learning resources for Practicum 2.</p>
+    </div>
+    <div *ngIf="isActiveTab('Student Works')">
+      <h2>Student Works</h2>
+      <p>View and manage student submissions and assignments.</p>
+    </div>
+    <div *ngIf="isActiveTab('Class List')">
+      <h2>Class List</h2>
+      <p>View the list of students enrolled in this class.</p>
+    </div>
+    <div *ngIf="isActiveTab('Messaging')">
+      <h2>Messaging</h2>
+      <p>Communicate with students and send important announcements.</p>
+    </div>
+  </div>
+</div>
