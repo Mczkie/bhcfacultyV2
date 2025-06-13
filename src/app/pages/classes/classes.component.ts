@@ -29,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ClassesComponent {
   
+  currentTime: Date = new Date();
 
   childActive = false;
 
