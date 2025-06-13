@@ -7,6 +7,8 @@ import { RouterOutlet } from "@angular/router";
 import { MatToolbar } from "@angular/material/toolbar";
 import { Router } from "@angular/router";
 import { RouterLink, RouterLinkActive } from "@angular/router";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
+import { timeout } from "rxjs";
 
 @Component({
   selector: "app-dashboard",
@@ -36,9 +38,22 @@ export class DashboardComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private snackBar: MatSnackBar) {}
 
   onLogOut() {
-    this.router.navigate(['Bataan-heroes-lamp']);
+    this.onLogoutSnack();
+    
+    setTimeout(() => {
+      this.router.navigate(['Bataan-heroes-lamp']);
+    }, 1500);
+  }
+
+  onLogoutSnack() {
+    this.snackBar.open('Logout Successfuly', 'Close', {
+      duration: 1500,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: ['success-snackbar']
+    })
   }
 }

@@ -93,3 +93,7 @@ mat-sidenav-content {
   padding: 0;
   text-align: end;
 }
+
+.success-snackbar {
+  background-color: #f2f3ef;
+}
