@@ -3,7 +3,11 @@
 }
 
 .class-header {
+<<<<<<< HEAD
   width: 1306px;
+=======
+  width: 98%;
+>>>>>>> 38614d6 (Save local changes before pulling)
   height: 147px;
   background-color: #b71c4d;
   color: white;
@@ -37,8 +41,14 @@
 }
 
 .class-contents {
+<<<<<<< HEAD
   width: 1306px;
   height: 613px;
+=======
+  width: 98%;
+  height: auto;
+  min-height: 500px;
+>>>>>>> 38614d6 (Save local changes before pulling)
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 9px;
@@ -47,6 +57,60 @@
   align-items: stretch;
 }
 
+<<<<<<< HEAD
+=======
+.vertical-line {
+  width: 2px;
+  height: auto;
+  background-color: black;
+  opacity: 10%;
+}
+
+.side-content {
+  width: 60%;
+  padding: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  margin: 0;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;   /* vertically center */
+  justify-content: center; /* horizontally center, optional */
+}
+
+.button-anes {
+  padding: 10px 40px;
+  background-color: #b71c4d;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.button-anes:hover {
+  background-color: #a00c3f; /* Darker shade on hover */
+  transition: background-color 0.3s ease;
+}
+
+.user-icon {
+  font-size: 32px; /* make the icon bigger if needed */
+  color: #333;
+}
+
+.side-content h2 {
+  text-align: center;
+}
+
+>>>>>>> 38614d6 (Save local changes before pulling)
 .class-nav {
   display: flex;
   border-bottom: 1px solid #ddd;
@@ -69,7 +133,11 @@
 }
 
 .nav-item.active::after {
+<<<<<<< HEAD
   content: '';
+=======
+  content: "";
+>>>>>>> 38614d6 (Save local changes before pulling)
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -83,7 +151,10 @@
 }
 
 .content-area {
+<<<<<<< HEAD
   flex: 1;
+=======
+>>>>>>> 38614d6 (Save local changes before pulling)
   padding: 15px;
 }
 
@@ -100,9 +171,15 @@
 }
 
 .class-create-posts {
+<<<<<<< HEAD
   width: 479.19px;
   height: 225px;
   border: 1px solid #D9D9D9;
+=======
+  width: 500px;
+  height: 225px;
+  border: 1px solid #d9d9d9;
+>>>>>>> 38614d6 (Save local changes before pulling)
   border-radius: 8px;
 }
 
@@ -133,7 +210,11 @@
   margin: 0 0 0 16px;
   width: 40px;
   height: 40px;
+<<<<<<< HEAD
   border: 1px solid #D9D9D9;
+=======
+  border: 1px solid #d9d9d9;
+>>>>>>> 38614d6 (Save local changes before pulling)
   border-radius: 8px;
   cursor: pointer;
 }
@@ -144,14 +225,22 @@
 }
 
 .img-icon-2 {
+<<<<<<< HEAD
   color: #FF7B00;
+=======
+  color: #ff7b00;
+>>>>>>> 38614d6 (Save local changes before pulling)
 }
 
 .btn-elevated-2 {
   margin: 0 0 0 16px;
   width: 40px;
   height: 40px;
+<<<<<<< HEAD
   border: 1px solid #D9D9D9;
+=======
+  border: 1px solid #d9d9d9;
+>>>>>>> 38614d6 (Save local changes before pulling)
   border-radius: 8px;
   cursor: pointer;
 }
@@ -162,16 +251,27 @@
 }
 
 .img-icon-3 {
+<<<<<<< HEAD
   color: #F0BF4C;
+=======
+  color: #f0bf4c;
+>>>>>>> 38614d6 (Save local changes before pulling)
 }
 
 .btn-elevated-3 {
   margin: 0 0 0 16px;
   width: 40px;
   height: 40px;
+<<<<<<< HEAD
   border: 1px solid #D9D9D9;
   border-radius: 8px;
   cursor: pointer;
+=======
+  border: 1px solid #2f00ff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #2f00ff;
+>>>>>>> 38614d6 (Save local changes before pulling)
 }
 
 .btn-elevated-3:hover {
@@ -183,17 +283,28 @@
   margin: 0 0 0 220px;
   width: 66.95px;
   height: 36px;
+<<<<<<< HEAD
   border: 1px solid #D9D9D9;
+=======
+  border: 1px solid #d9d9d9;
+>>>>>>> 38614d6 (Save local changes before pulling)
   border-radius: 8px;
   cursor: pointer;
   font-family: Poppins;
   font-size: 18px;
   font-weight: 400;
   color: #666666;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 38614d6 (Save local changes before pulling)
 }
 
 .btn-elevated-4:hover {
   background-color: rgb(217, 212, 212);
   transition: all 0.3s ease;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 38614d6 (Save local changes before pulling)

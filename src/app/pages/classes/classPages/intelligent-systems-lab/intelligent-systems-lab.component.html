@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="class-header">
@@ -5,11 +6,24 @@
     <h1 class="class-title">Intelligent Systems LAB</h1>
     <p class="class-code">Class Code: 12345</p>
     <p class="class-schedule">Tuesday, 12:00 PM - 02:30 PM</p>
+=======
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<div class="class-header">
+  <div class="class-info">
+    <h1 class="class-title">Intelligent-System Lab</h1>
+    <p class="class-code">Class Code: 12345</p>
+    <p class="class-schedule">Monday - Tuesday, 9:30AM - 12PM</p>
+>>>>>>> 38614d6 (Save local changes before pulling)
   </div>
 </div>
 
 <div class="class-contents">
   <div class="class-nav">
+<<<<<<< HEAD
     <div class="nav-item" [class.active]="isActiveTab('Class Feed')" (click)="setActiveTab('Class Feed')">Class Feed
     </div>
     <div class="nav-item" [class.active]="isActiveTab('Activities/Resources')"
@@ -58,6 +72,197 @@
     <div *ngIf="isActiveTab('Activities/Resources')">
       <h2>Activities & Resources</h2>
       <p>Access class activities and learning resources for Intelligent Systems LAB.</p>
+=======
+    <div
+      class="nav-item"
+      [class.active]="isActiveTab('Class Feed')"
+      (click)="setActiveTab('Class Feed')"
+    >
+      Class Feed
+    </div>
+    <div
+      class="nav-item"
+      [class.active]="isActiveTab('Activities/Resources')"
+      (click)="setActiveTab('Activities/Resources')"
+    >
+      Activities/Resources
+    </div>
+    <div
+      class="nav-item"
+      [class.active]="isActiveTab('Student Works')"
+      (click)="setActiveTab('Student Works')"
+    >
+      Student Works
+    </div>
+    <div
+      class="nav-item"
+      [class.active]="isActiveTab('Class List')"
+      (click)="setActiveTab('Class List')"
+    >
+      Class List
+    </div>
+    <div
+      class="nav-item"
+      [class.active]="isActiveTab('Messaging')"
+      (click)="setActiveTab('Messaging')"
+    >
+      Messaging
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div
+      *ngIf="isActiveTab('Class Feed')"
+      style="display: flex; flex-direction: row; gap: 20px"
+    >
+      <section style="display: flex; flex-direction: column; gap: 20px">
+        <div class="class-create-posts">
+          <h1>Create Post</h1>
+          <mat-icon class="user-icon"> account_circle </mat-icon>
+          <mat-form-field class="post-input">
+            <mat-label>What's on your mind?</mat-label>
+            <input matInput placeholder="Write your post..." />
+          </mat-form-field>
+
+          <button matMiniFab class="btn-elevated">
+            <mat-icon class="img-icon"> add_photo_alternate </mat-icon>
+          </button>
+
+          <button matMiniFab class="btn-elevated-2">
+            <mat-icon class="img-icon-2"> video_call </mat-icon>
+          </button>
+
+          <button matMiniFab class="btn-elevated-3">
+            <mat-icon class="img-icon-3" color="black"> attach_file </mat-icon>
+          </button>
+
+          <button matButton="outlined" class="btn-elevated-4">Posts</button>
+        </div>
+
+        <div class="post-container">
+          <mat-card class="post-card" style="padding: 10px">
+            <div class="post-header">
+              <mat-icon class="user-icon"> account_circle </mat-icon>
+              <span class="username">John Doe</span>
+            </div>
+            <div class="post-content">
+              <p>This is a sample post content.</p>
+            </div>
+            <div class="post-actions">
+              <hr />
+              <button mat-button>Like</button>
+              <button mat-button>Comment</button>
+              
+            </div>
+          </mat-card>
+
+          <!-- More posts can be added here -->
+        </div>
+      </section>
+
+      <div class="vertical-line"></div>
+
+      <!--- CLASS FEED --->
+      <aside class="side-content">
+        <h2>List of activies</h2>
+        <hr />
+        <div class="card-container">
+          <mat-card
+            class="activities-content"
+            *ngFor="let contentActivites of activies"
+            style="height: auto; padding: 10px"
+          >
+            <div class="post">
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  gap: 10px;
+                  align-items: center;
+                "
+              >
+                <div class="icon-container">
+                  <mat-icon class="user-icon">update</mat-icon>
+                </div>
+
+                <div style="margin: 20px">
+                  <h3>Class: {{ contentActivites.activityName }}</h3>
+                  <p>Due: {{ contentActivites.activityDate }}</p>
+                </div>
+              </div>
+
+              <div>
+                <button
+                  class="button-anes"
+                  (click)="enterActivity(contentActivites)"
+                >
+                  Enter
+                </button>
+              </div>
+            </div>
+          </mat-card>
+          <!-- More posts can be added here -->
+        </div>
+      </aside>
+    </div>
+
+    <div *ngIf="isActiveTab('Activities/Resources')">
+      <h2>Activities & Resources</h2>
+      <p>
+        Access class activities and learning resources for Thesis Writing 2.
+      </p>
+      <hr />
+
+      <div *ngIf="selectedActivity; else activityList">
+        <div *ngIf="selectedActivity.resources?.length > 0; else noResources">
+          <mat-card
+            class="activities-content"
+            style="padding: 10px"
+            *ngFor="let resource of selectedActivity.resources"
+          >
+            <h5>{{ resource.resourceName }}</h5>
+            <p>{{ resource.resourceDescription }}</p>
+            <a
+              *ngIf="resource.resource && resource.resource !== 'No Resource'"
+              [href]="resource.resourceLink"
+              target="_blank"
+            >
+              <button mat-button>View Resource</button>
+            </a>
+            <button mat-button (click)="selectedActivity = null">
+              Back to All Activities
+            </button>
+          </mat-card>
+        </div>
+      </div>
+
+      <ng-template #noResources>
+        <p>No resources available for this activity.</p>
+
+        <button (click)="selectedActivity = null" mat-button>
+          Go back to Activities
+        </button>
+      </ng-template>
+
+      <ng-template #activityList>
+        <div class="card-container">
+          <mat-card
+            class="activities-content"
+            *ngFor="let contentActivites of activies"
+            style="height: auto; padding: 10px"
+          >
+            <h3>{{ contentActivites.activityName }}</h3>
+            <p>Due: {{ contentActivites.activityDate }}</p>
+            <button
+              class="button-anes"
+              (click)="enterActivity(contentActivites)"
+            >
+              Enter
+            </button>
+          </mat-card>
+        </div>
+      </ng-template>
+>>>>>>> 38614d6 (Save local changes before pulling)
     </div>
     <div *ngIf="isActiveTab('Student Works')">
       <h2>Student Works</h2>
@@ -72,4 +277,8 @@
       <p>Communicate with students and send important announcements.</p>
     </div>
   </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 38614d6 (Save local changes before pulling)
