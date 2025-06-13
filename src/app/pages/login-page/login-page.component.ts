@@ -52,7 +52,7 @@ export class LoginPageComponent {
 
   showSuccessToast() {
   this.snackBar.open('Login Successful!', 'Close', {
-    duration: 3000, // 3 seconds
+    duration: 1500, 
     horizontalPosition: 'right',
     verticalPosition: 'top',
     panelClass: ['success-snackbar'] // optional custom class for styling
