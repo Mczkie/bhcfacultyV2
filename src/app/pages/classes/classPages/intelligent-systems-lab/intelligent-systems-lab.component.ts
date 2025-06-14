@@ -4,7 +4,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
+<<<<<<< HEAD
 
+=======
+>>>>>>> recovered-work
 
 @Component({
   selector: 'app-intelligent-systems-lab',

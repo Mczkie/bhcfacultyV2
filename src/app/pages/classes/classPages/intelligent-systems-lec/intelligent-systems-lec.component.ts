@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +20,17 @@ import { MatCard, MatCardModule } from '@angular/material/card';
   selector: 'app-intelligent-systems-lec',
   imports: [CommonModule, MatInputModule, MatIconModule, MatButtonModule, MatCard, MatCardModule, NgIf, NgFor],
 >>>>>>> 38614d6 (Save local changes before pulling)
+=======
+import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCard, MatCardModule } from '@angular/material/card';
+
+@Component({
+  selector: 'app-intelligent-systems-lec',
+  imports: [CommonModule, MatInputModule, MatIconModule, MatButtonModule, MatCard, MatCardModule, NgIf, NgFor],
+>>>>>>> recovered-work
   templateUrl: './intelligent-systems-lec.component.html',
   styleUrl: './intelligent-systems-lec.component.css',
 })
@@ -33,7 +45,10 @@ export class IntelligentSystemsLecComponent {
     return this.activeTab === tabName;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> recovered-work
 
   selectedActivity: any = null;
   enterActivity(activity: any) {
@@ -68,5 +83,8 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
       activityDate: "Monday, 12:00 PM - 02:30 PM",
     },
   ];
+<<<<<<< HEAD
 >>>>>>> 38614d6 (Save local changes before pulling)
+=======
+>>>>>>> recovered-work
 }
