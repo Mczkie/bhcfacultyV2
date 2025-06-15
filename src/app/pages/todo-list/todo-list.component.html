@@ -1,19 +1,81 @@
-<h1>
-  Todo-list 
-</h1>
-<p style="color: #000; font-size: 15px">Make your thoughts win every task!</p>
-<hr />
+<mat-card class="faculty-todo-container">
+  <mat-card-header>
+    <mat-card-title class="faculty-title">
+      <mat-icon class="title-icon">assignment</mat-icon>
+      Faculty Tasks
+    </mat-card-title>
+    <mat-card-subtitle>Manage your daily academic responsibilities</mat-card-subtitle>
+  </mat-card-header>
 
-<div class="card-container">
-  <mat-card class="custom-card" *ngFor="let classItem of classes">
-    <div class="card-header">
-      <p class="class-code">Class Code: {{ classItem.classCode }}</p>
-      <h2 class="class-title">{{ classItem.className }}</h2>
-      <p class="class-time">{{ classItem.classDate }}</p>
-      <p class="class-room"> {{ classItem.classRoom }}</p>
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <!-- Filter Controls -->
+    <div class="filter-controls">
+      <mat-button-toggle-group value="all" (change)="filterTasks($event.value)">
+        <mat-button-toggle value="all">All</mat-button-toggle>
+        <mat-button-toggle value="active">Active</mat-button-toggle>
+        <mat-button-toggle value="completed">Completed</mat-button-toggle>
+      </mat-button-toggle-group>
     </div>
-    <div class="card-footer">
-      <button mat-stroked-button color="primary">Enter ›</button>
+
+    <!-- Task List -->
+    <mat-list class="faculty-task-list">
+      <!-- Example Task Item -->
+      <mat-list-item class="faculty-task-item">
+        <mat-checkbox color="primary" [checked]="false">
+          <div class="task-content">
+            <span class="task-title">Prepare lecture slides for CS101</span>
+            <div class="task-due-date">
+              <mat-icon class="due-date-icon">event</mat-icon>
+              <span>Tue, Jun 20 2023</span>
+            </div>
+          </div>
+        </mat-checkbox>
+        <button mat-icon-button class="task-action" matTooltip="Edit task">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="task-action" color="warn" matTooltip="Delete task">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <!-- Additional Task Items -->
+      <mat-list-item class="faculty-task-item">
+        <mat-checkbox color="primary" [checked]="false">
+          <span class="task-title">Grade midterm exams</span>
+        </mat-checkbox>
+        <!-- Action buttons would go here -->
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item class="faculty-task-item completed">
+        <mat-checkbox color="primary" [checked]="true">
+          <span class="task-title">Submit research paper revisions</span>
+        </mat-checkbox>
+        <!-- Action buttons would go here -->
+      </mat-list-item>
+    </mat-list>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button mat-flat-button color="primary" class="add-task-button">
+        <mat-icon>add</mat-icon>
+        Add Task
+      </button>
+      <button mat-stroked-button color="warn" class="clear-completed-button">
+        <mat-icon>delete_sweep</mat-icon>
+        Clear Completed
+      </button>
     </div>
-  </mat-card>
-</div>
+
+    <!-- Task Summary -->
+    <div class="task-summary">
+      <span>1 task remaining</span>
+      <span class="completed-count">(2 completed)</span>
+    </div>
+  </mat-card-content>
+</mat-card>

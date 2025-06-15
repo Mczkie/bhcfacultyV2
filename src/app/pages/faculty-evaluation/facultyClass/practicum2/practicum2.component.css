@@ -1,0 +1,19 @@
+.faculty-header {
+  margin-bottom: 20px;
+
+  .faculty-photo {
+    background-image: url('/assets/faculty.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.evaluation-results {
+  padding: 20px;
+
+  .average-score {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #3f51b5;
+  }
+}

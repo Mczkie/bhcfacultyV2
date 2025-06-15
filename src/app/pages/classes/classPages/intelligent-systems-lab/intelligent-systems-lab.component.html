@@ -5,7 +5,7 @@
 
 <div class="class-header">
   <div class="class-info">
-    <h1 class="class-title">Intelligent-System Lec</h1>
+    <h1 class="class-title">Intelligent-System LAB</h1>
     <p class="class-code">Class Code: 12345</p>
     <p class="class-schedule">Monday - Tuesday, 9:30AM - 12PM</p>
   </div>
@@ -123,25 +123,59 @@
           Go back to Activities
         </button>
       </ng-template>
+
       <ng-template #activityList>
-        <div class="card-container">
-          <mat-card
-            class="activities-content"
-            *ngFor="let contentActivites of activies"
-            style="height: auto; padding: 10px"
-          >
-            <h3>{{ contentActivites.activityName }}</h3>
-            <p>Due: {{ contentActivites.activityDate }}</p>
-            <button
-              class="button-anes"
-              (click)="enterActivity(contentActivites)"
+        <section style="display: flex; flex-direction: row; gap: 50px">
+          <div class="card-container" style="width: 50%">
+            <div style="text-align: center">
+              <h2>Resources</h2>
+              <hr />
+            </div>
+            <mat-card
+              class="activities-content"
+              style="height: auto; padding: 10px"
+              *ngFor="let resources of classResources"
             >
-              Enter
-            </button>
-          </mat-card>
-        </div>
+                <h2>{{ resources.resourceName }}</h2>
+                <details class="resource-details">
+                  <summary>click here</summary>
+                  <div class="details-content">
+                    <p>{{ resources.resourceDescription }}</p>
+                    <a [href]="classResources[0].resourceLink" target="_blank">
+                      Excel Basics
+                    </a>
+                  </div>
+                </details>
+            </mat-card>
+          </div>
+
+          <div class="vertical-line"></div>
+
+          <div class="card-container" style="width: 55%">
+            <div style="text-align: center">
+              <h2>List of Activies</h2>
+              <hr />
+            </div>
+            <mat-card
+              class="activities-content"
+              *ngFor="let contentActivites of activies"
+              style="height: auto; padding: 10px"
+            >
+              <h3>{{ contentActivites.activityName }}</h3>
+              <p>Due: {{ contentActivites.activityDate }}</p>
+              <button
+                class="button-anes"
+                (click)="enterActivity(contentActivites)"
+              >
+                Enter
+              </button>
+            </mat-card>
+          </div>
+        </section>
       </ng-template>
     </div>
+
+
     <!-- Student Works Tab -->
     <div *ngIf="isActiveTab('Student Works')">
       <h2>Student Works</h2>
@@ -149,13 +183,100 @@
     </div>
     <!-- Class List Tab -->
     <div *ngIf="isActiveTab('Class List')">
-      <h2>Class List</h2>
-      <p>View the list of students enrolled in this class.</p>
+      <h2 style="text-align: center">Class List</h2>
+      <p style="text-align: center;">Students: {{ classProfiles.length}}</p>
+
+      
+      <section style="display: flex; flex-direction: row; gap: 50px">
+        <mat-card class="profile-card">
+          <div class="profile-picture"></div>
+          <h3 class="profile-name">Mr. John Doe</h3>
+          <p class="profile-dept">CCS Department</p>
+        </mat-card>
+        
+        <div class="vertical-line"></div>
+
+        <div class="class-profile-cards" >
+          <mat-card class="class-profile-card" *ngFor="let profile of classProfiles">
+            <h1>{{ profile.name}}</h1>
+            <p>{{ profile.role}}</p>
+            <p>{{ profile.email}}</p>
+           </mat-card>
+        </div>
+      </section>
     </div>
     <!-- Messaging Tab -->
     <div *ngIf="isActiveTab('Messaging')">
-      <h2>Messaging</h2>
-      <p>Communicate with students and send important announcements.</p>
+      <div class="messaging-container">
+  <!-- Sidebar with contacts -->
+  <div class="contacts-sidebar">
+    <div class="search-container">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search contacts...</mat-label>
+        <input matInput>
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="contacts-list">
+      <div class="contact-card" 
+           *ngFor="let contact of contacts" 
+           [class.active]="contact.id === selectedContact?.id"
+           (click)="selectContact(contact)">
+        <div class="contact-avatar">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+        <div class="contact-info">
+          <div class="contact-name">{{contact.name}}</div>
+          <div class="contact-title">{{contact.title}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main chat area -->
+  <div class="chat-area">
+    <div *ngIf="selectedContact; else noContactSelected">
+      <div class="chat-header">
+        <div class="recipient-info">
+          <div class="recipient-avatar">
+            <mat-icon>account_circle</mat-icon>
+          </div>
+          <div>
+            <div class="recipient-name">{{selectedContact.name}}</div>
+            <div class="recipient-title">{{selectedContact.title}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="messages-container">
+        <!-- Messages will appear here -->
+        <div class="empty-conversation" *ngIf="true"> <!-- Remove *ngIf when implementing messages -->
+          <mat-icon>chat</mat-icon>
+          <p>Start a new conversation with {{selectedContact.name}}</p>
+        </div>
+      </div>
+
+      <div class="message-input-container">
+        <mat-form-field appearance="outline" class="message-input">
+          <mat-label>Type your message...</mat-label>
+          <textarea matInput rows="3"></textarea>
+        </mat-form-field>
+        <button mat-icon-button color="primary">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <ng-template #noContactSelected>
+      <div class="no-contact-selected">
+        <mat-icon class="info-icon">info</mat-icon>
+        <h3>No contact selected</h3>
+        <p>Choose a contact from the list to begin conversation</p>
+      </div>
+    </ng-template>
+  </div>
+</div>
     </div>
   </div>
 </div>

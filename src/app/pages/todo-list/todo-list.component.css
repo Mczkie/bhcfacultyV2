@@ -1,70 +1,120 @@
-* {
-    font-family: sans-serif, poppins;
+.faculty-todo-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 15px;
-  gap: 10px;
-  row-gap: 40px;
-}
-
-.custom-card {
-  width: 400px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 0;
-}
-
-.card-header {
-  background-color: #b71c4d; 
-  color: white;
-  padding: 20px;
-
-  .class-code {
-    font-weight: bold;
-    font-size: 0.81rem;
-    margin-bottom: 5px;
-  }
-
-  .class-title {
-    font-size: 1.45rem;
-    margin: 5px 0;
-    font-weight: 700;
-  }
-
-  .class-time,
-  .class-room {
-    font-size: 0.9rem;
-    margin: 2px 0;
-  }
-}
-
-.card-footer {
-  background-color: white;
-  padding: 12px 20px;
+.faculty-title {
+  font-size: 1.8rem;
+  font-weight: 500;
   display: flex;
-  justify-content: flex-end;
-
-  button {
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 10px 20px;
-    border: #b71c4d 2px solid;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #b71c4d;
-    color: white;
-    
+  align-items: center;
+  
+  .title-icon {
+    margin-right: 12px;
+    color: #3f51b5;
   }
 }
 
-.custom-card:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s;
+mat-card-subtitle {
+  color: #666;
+  font-size: 1rem;
+}
+
+.filter-controls {
+  margin: 1.5rem 0;
+  
+  mat-button-toggle-group {
+    border-radius: 4px;
+    overflow: hidden;
+    
+    mat-button-toggle {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+    }
+  }
+}
+
+.faculty-task-list {
+  padding: 0;
+  
+  .faculty-task-item {
+    padding: 12px 0;
+    height: auto;
+    min-height: 64px;
+    
+    &.completed {
+      .task-title {
+        text-decoration: line-through;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+    
+    .task-content {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .task-title {
+      font-size: 1rem;
+      margin-left: 8px;
+    }
+    
+    .task-due-date {
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: #666;
+      
+      .due-date-icon {
+        font-size: 1rem;
+        margin-right: 4px;
+      }
+    }
+    
+    .task-action {
+      margin-left: 8px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    
+    &:hover .task-action {
+      opacity: 1;
+    }
+  }
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  
+  .add-task-button {
+    margin-right: 12px;
+  }
+  
+  button {
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+.task-summary {
+  text-align: right;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  
+  .completed-count {
+    margin-left: 8px;
+    color: #4caf50;
+  }
+}
+
+mat-divider {
+  margin: 8px 0;
 }

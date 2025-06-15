@@ -1,3 +1,33 @@
-<p>thesis-writing2 works!</p>
-<h1>kupal2
-</h1>
+<mat-card class="faculty-header">
+  <mat-card-header>
+    <div mat-card-avatar class="faculty-photo"></div>
+    <mat-card-title>Dr. Juan Dela Cruz</mat-card-title>
+    <mat-card-subtitle>Faculty Member, Computer Science Department</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+<mat-card class="evaluation-results">
+  <mat-card-title>Evaluation Results</mat-card-title>
+
+  <mat-table [dataSource]="evaluationData" class="mat-elevation-z8">
+
+    <!-- Criteria Column -->
+    <ng-container matColumnDef="criteria">
+      <mat-header-cell *matHeaderCellDef> Criteria </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.criteria}} </mat-cell>
+    </ng-container>
+
+    <!-- Score Column -->
+    <ng-container matColumnDef="score">
+      <mat-header-cell *matHeaderCellDef> Score </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.score}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <div class="average-score">
+    <strong>Average Score: </strong> {{ getAverageScore() }}/5
+  </div>
+</mat-card>

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatCell } from '@angular/material/table';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 
 

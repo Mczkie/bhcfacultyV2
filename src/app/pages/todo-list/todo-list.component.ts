@@ -1,52 +1,102 @@
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatCard } from '@angular/material/card';
+import { NgModel } from '@angular/forms';
+import { MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatDivider, MatList, MatListItem } from '@angular/material/list';
+import { MatCheckbox } from '@angular/material/checkbox';
+import { MatIcon } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { MatButtonToggleGroup, MatButtonToggle } from '@angular/material/button-toggle'
+import { MatDialog } from '@angular/material/dialog';
+
+interface Task {
+  title: string;
+  completed: boolean;
+  dueDate?: Date;
+}
 
 @Component({
   selector: 'app-todo-list',
   imports: [
     MatCard,
-    NgFor
+    MatCardTitle,
+    MatList,
+    MatListItem,
+    MatCheckbox,
+    MatIcon,
+    MatCardHeader,
+    MatCardSubtitle,
+    MatCardContent,
+    MatButtonToggleGroup,
+    MatButtonToggle,
+    MatDivider,
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
 })
+
 export class TodoListComponent {
 
-  classes = [
-    {
-      className: "Thesis Writing 2",
-      classDate: 'Saturday, April 4, 2025, 00:00 PM',
-      classCode: '12345',
-      classRoom: '#Room: 408',
+  tasks: Task[] = [
+    { title: 'Prepare lecture slides for CS101', completed: false, dueDate: new Date('2023-06-20') },
+    { title: 'Grade midterm exams', completed: false },
+    { title: 'Submit research paper revisions', completed: true }
+  ];
+  
+  filteredTasks: Task[] = [...this.tasks];
+  currentFilter: string = 'all';
 
-    },
-    {
-      className: "Discrete Mathematics",
-      classDate: 'Monday, 04:00 pm - 05:00 pm',
-      classCode: '12345',
-      classRoom: '#Room: 421',
+  constructor(private dialog: MatDialog) {}
 
-    },
-    {
-      className: "Practicum 2",
-      classDate: 'M - T,  08:00 am - 05:00 pm',
-      classCode: '12345',
-      classRoom: '#Room: 101',
+  addTask(title: string): void {
+    if (title.trim()) {
+      this.tasks.push({ title, completed: false });
+      this.filterTasks(this.currentFilter);
+    }
+  }
 
-    },
-    {
-      className: "Intelligent Systems LEC",
-      classDate: 'Monday, 12:00 PM - 02: 30 PM',
-      classCode: '12345',
-      classRoom: '#Room: 521',
+  deleteTask(index: number): void {
+    this.tasks.splice(index, 1);
+    this.filterTasks(this.currentFilter);
+  }
 
-    },
-    {
-      className: "Intelligent Systems LAB",
-      classDate: 'Tuesday, 12:00 PM - 02: 30 PM',
-      classCode: '12345',
-      classRoom: '#Room: 521',
-    },
-  ]
-}
+  toggleTask(index: number): void {
+    this.tasks[index].completed = !this.tasks[index].completed;
+    this.filterTasks(this.currentFilter);
+  }
+
+  filterTasks(filter: string): void {
+    this.currentFilter = filter;
+    switch (filter) {
+      case 'active':
+        this.filteredTasks = this.tasks.filter(task => !task.completed);
+        break;
+      case 'completed':
+        this.filteredTasks = this.tasks.filter(task => task.completed);
+        break;
+      default:
+        this.filteredTasks = [...this.tasks];
+    }
+  }
+
+  clearCompleted(): void {
+    this.tasks = this.tasks.filter(task => !task.completed);
+    this.filterTasks(this.currentFilter);
+  }
+
+  hasCompletedTasks(): boolean {
+    return this.tasks.some(task => task.completed);
+  }
+
+  getActiveTaskCount(): number {
+    return this.tasks.filter(task => !task.completed).length;
+  }
+
+  getCompletedTaskCount(): number {
+    return this.tasks.filter(task => task.completed).length;
+  }
+
+  openEditDialog(task: Task, index: number): void {
+  
+  }}
