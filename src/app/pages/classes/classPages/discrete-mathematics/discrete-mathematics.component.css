@@ -66,18 +66,10 @@
   gap: 20px;
 }
 
-<<<<<<< HEAD
 .icon-container {
   display: flex;
   align-items: center;
   justify-content: center;
-=======
-
-.icon-container {
-  display: flex;
-  align-items: center;   /* vertically center */
-  justify-content: center; /* horizontally center, optional */
->>>>>>> recovered-work
 }
 
 .button-anes {
@@ -111,7 +103,6 @@
 
 .nav-item {
   font-size: 18px;
-<<<<<<< HEAD
 
   padding: 10px 20px;
   width: 314.86px;
@@ -121,11 +112,6 @@
   text-align: center;
   padding: 10px 20px;
 
-=======
-  width: 314.86px;
-  text-align: center;
-  padding: 10px 20px;
->>>>>>> recovered-work
   cursor: pointer;
   position: relative;
   color: #333;
@@ -137,14 +123,10 @@
 }
 
 .nav-item.active::after {
-<<<<<<< HEAD
   content: '';
 
   content: "";
 
-=======
-  content: "";
->>>>>>> recovered-work
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -158,10 +140,7 @@
 }
 
 .content-area {
-<<<<<<< HEAD
   flex: 1;
-=======
->>>>>>> recovered-work
   padding: 15px;
 }
 
@@ -178,12 +157,9 @@
 }
 
 .class-create-posts {
-<<<<<<< HEAD
   width: 479.19px;
   height: 225px;
   border: 1px solid #D9D9D9;
-=======
->>>>>>> recovered-work
   width: 500px;
   height: 225px;
   border: 1px solid #d9d9d9;
@@ -217,11 +193,7 @@
   margin: 0 0 0 16px;
   width: 40px;
   height: 40px;
-<<<<<<< HEAD
   border: 1px solid #D9D9D9;
-=======
->>>>>>> recovered-work
-  border: 1px solid #d9d9d9;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -232,21 +204,13 @@
 }
 
 .img-icon-2 {
-<<<<<<< HEAD
   color: #FF7B00;
-=======
->>>>>>> recovered-work
-  color: #ff7b00;
 }
 
 .btn-elevated-2 {
   margin: 0 0 0 16px;
   width: 40px;
   height: 40px;
-<<<<<<< HEAD
-  border: 1px solid #D9D9D9;
-=======
->>>>>>> recovered-work
   border: 1px solid #d9d9d9;
   border-radius: 8px;
   cursor: pointer;
@@ -258,37 +222,17 @@
 }
 
 .img-icon-3 {
-<<<<<<< HEAD
-
-  color: #F0BF4C;
-
   color: #f0bf4c;
-
-=======
-  color: #f0bf4c;
->>>>>>> recovered-work
 }
 
 .btn-elevated-3 {
   margin: 0 0 0 16px;
   width: 40px;
   height: 40px;
-<<<<<<< HEAD
-
-  border: 1px solid #D9D9D9;
-  border-radius: 8px;
-  cursor: pointer;
-
-=======
->>>>>>> recovered-work
   border: 1px solid #2f00ff;
   border-radius: 8px;
   cursor: pointer;
   color: #2f00ff;
-<<<<<<< HEAD
-
-=======
->>>>>>> recovered-work
 }
 
 .btn-elevated-3:hover {
@@ -300,35 +244,16 @@
   margin: 0 0 0 220px;
   width: 66.95px;
   height: 36px;
-<<<<<<< HEAD
-
-  border: 1px solid #D9D9D9;
-
   border: 1px solid #d9d9d9;
-
-=======
-  border: 1px solid #d9d9d9;
->>>>>>> recovered-work
   border-radius: 8px;
   cursor: pointer;
   font-family: Poppins;
   font-size: 18px;
   font-weight: 400;
   color: #666666;
-<<<<<<< HEAD
-
-=======
->>>>>>> recovered-work
 }
 
 .btn-elevated-4:hover {
   background-color: rgb(217, 212, 212);
   transition: all 0.3s ease;
-<<<<<<< HEAD
-
 }
-
-
-=======
-}
->>>>>>> recovered-work

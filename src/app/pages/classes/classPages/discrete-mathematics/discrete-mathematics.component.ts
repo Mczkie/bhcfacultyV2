@@ -5,10 +5,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
-<<<<<<< HEAD
-
-=======
->>>>>>> recovered-work
 
 @Component({
   selector: 'app-discrete-mathematics',
@@ -21,11 +17,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     MatCard,
     MatCardModule,
     NgIf,
-<<<<<<< HEAD
-    NgFor,
-=======
     NgFor
->>>>>>> recovered-work
   ],
   templateUrl: './discrete-mathematics.component.html',
   styleUrl: './discrete-mathematics.component.css',
@@ -41,10 +33,6 @@ export class DiscreteMathematicsComponent {
     return this.activeTab === tabName;
   }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> recovered-work
   selectedActivity: any = null;
   enterActivity(activity: any) {
     this.selectedActivity = activity;
