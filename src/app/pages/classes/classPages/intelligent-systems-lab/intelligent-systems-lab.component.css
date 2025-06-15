@@ -72,8 +72,8 @@
 
 .icon-container {
   display: flex;
-  align-items: center;   /* vertically center */
-  justify-content: center; /* horizontally center, optional */
+  align-items: center;
+  justify-content: center;
 }
 
 .button-anes {
@@ -86,12 +86,12 @@
 }
 
 .button-anes:hover {
-  background-color: #a00c3f; /* Darker shade on hover */
+  background-color: #a00c3f;
   transition: background-color 0.3s ease;
 }
 
 .user-icon {
-  font-size: 32px; /* make the icon bigger if needed */
+  font-size: 32px;
   color: #333;
 }
 

@@ -48,6 +48,13 @@
   align-items: stretch;
 }
 
+.vertical-line {
+  width: 2px;
+  height: auto;
+  background-color: black;
+  opacity: 10%;
+}
+
 .side-content {
   width: 60%;
   padding: 10px;
@@ -65,8 +72,8 @@
 
 .icon-container {
   display: flex;
-  align-items: center;   /* vertically center */
-  justify-content: center; /* horizontally center, optional */
+  align-items: center;
+  justify-content: center;
 }
 
 .button-anes {
@@ -79,12 +86,12 @@
 }
 
 .button-anes:hover {
-  background-color: #a00c3f; /* Darker shade on hover */
+  background-color: #a00c3f;
   transition: background-color 0.3s ease;
 }
 
 .user-icon {
-  font-size: 32px; /* make the icon bigger if needed */
+  font-size: 32px;
   color: #333;
 }
 
@@ -123,6 +130,14 @@
   background-color: #b71c4d;
 }
 
+.nav-item:hover {
+  color: #b71c4d;
+}
+
+.content-area {
+  padding: 15px;
+}
+
 .content-area h2 {
   color: #b71c4d;
   font-size: 24px;
@@ -135,3 +150,101 @@
   color: #333;
 }
 
+.class-create-posts {
+  width: 500px;
+  height: 225px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}
+
+.class-create-posts h1 {
+  font-size: 18px;
+  color: #666666;
+  margin: 16px 0 0 16px;
+}
+
+.user-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  margin: 16px 0 0 10px;
+}
+
+.post-input {
+  margin: 16px 0 0 11px;
+  width: 395px;
+  height: 115px;
+}
+
+.img-icon {
+  color: #b71c4d;
+}
+
+.btn-elevated {
+  margin: 0 0 0 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-elevated:hover {
+  background-color: rgb(217, 212, 212);
+  transition: all 0.3s ease;
+}
+
+.img-icon-2 {
+  color: #ff7b00;
+}
+
+.btn-elevated-2 {
+  margin: 0 0 0 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-elevated-2:hover {
+  background-color: rgb(217, 212, 212);
+  transition: all 0.3s ease;
+}
+
+.img-icon-3 {
+  color: #f0bf4c;
+}
+
+.btn-elevated-3 {
+  margin: 0 0 0 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #2f00ff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #2f00ff;
+}
+
+.btn-elevated-3:hover {
+  background-color: rgb(217, 212, 212);
+  transition: all 0.3s ease;
+}
+
+.btn-elevated-4 {
+  margin: 0 0 0 220px;
+  width: 66.95px;
+  height: 36px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.btn-elevated-4:hover {
+  background-color: rgb(217, 212, 212);
+  transition: all 0.3s ease;
+}
