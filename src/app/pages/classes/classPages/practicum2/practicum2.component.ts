@@ -1,15 +1,4 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { CommonModule } from '@angular/common';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-
-@Component({
-  selector: 'app-practicum2',
-  imports: [CommonModule, MatInputModule, MatIconModule, MatButtonModule],
-=======
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,18 +8,6 @@ import { MatCard, MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-practicum2',
   imports: [CommonModule, MatInputModule, MatIconModule, MatButtonModule, MatCard, MatCardModule, NgIf, NgFor],
->>>>>>> 38614d6 (Save local changes before pulling)
-=======
-import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCard, MatCardModule } from '@angular/material/card';
-
-@Component({
-  selector: 'app-practicum2',
-  imports: [CommonModule, MatInputModule, MatIconModule, MatButtonModule, MatCard, MatCardModule, NgIf, NgFor],
->>>>>>> recovered-work
   templateUrl: './practicum2.component.html',
   styleUrl: './practicum2.component.css',
 })
@@ -44,12 +21,6 @@ export class Practicum2Component {
   isActiveTab(tabName: string): boolean {
     return this.activeTab === tabName;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> recovered-work
-
   selectedActivity: any = null;
   enterActivity(activity: any) {
     this.selectedActivity = activity;
@@ -83,8 +54,4 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
       activityDate: "Monday, 12:00 PM - 02:30 PM",
     },
   ];
-<<<<<<< HEAD
->>>>>>> 38614d6 (Save local changes before pulling)
-=======
->>>>>>> recovered-work
 }

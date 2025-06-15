@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
-import { MatInputModule } from '@angular/material/input';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCard, MatCardModule } from '@angular/material/card';
-=======
 import { Component } from "@angular/core";
 import { CommonModule, NgFor } from "@angular/common";
 import { MatInputModule } from "@angular/material/input";
 import { MatIcon, MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCard, MatCardModule } from "@angular/material/card";
->>>>>>> recovered-work
 
 @Component({
   selector: "app-thesis-writing2",
@@ -28,19 +19,11 @@ import { MatCard, MatCardModule } from "@angular/material/card";
     NgFor,
   ],
   templateUrl: "./thesis-writing2.component.html",
-<<<<<<< HEAD
-  styleUrls: ["./thesis-writing2.component.css"],
-=======
   styleUrl: "./thesis-writing2.component.css",
->>>>>>> recovered-work
 })
 export class ThesisWriting2Component {
   activeTab: string = "Class Feed";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> recovered-work
   setActiveTab(tabName: string): void {
     this.activeTab = tabName;
   }
