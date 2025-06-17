@@ -1,5 +1,5 @@
 * {
-    font-family: sans-serif, poppins;
+  font-family: sans-serif, poppins;
 }
 
 .card-container {
@@ -19,7 +19,7 @@
 }
 
 .card-header {
-  background-color: #b71c4d; 
+  background-color: #b71c4d;
   color: white;
   padding: 20px;
 
@@ -55,16 +55,55 @@
     border: #b71c4d 2px solid;
     border-radius: 8px;
     cursor: pointer;
+    overflow: hidden;
+    color: #000c;
   }
 
   button:hover {
+    transition: 0.2s linear;
     background-color: #b71c4d;
     color: white;
-    
   }
 }
 
 .custom-card:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s;
+  transform: scale(1.02);
+  transition: transform 0.3s;
+}
+
+/* media queries */
+
+@media (max-width: 480px) and (min-width: 300px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 15px;
+    gap: 10px;
+    row-gap: 40px;
+  }
+
+  .custom-card {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    button {
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: #b71c4d 2px solid;
+      border-radius: 8px;
+      cursor: pointer;
+      overflow: hidden;
+      font-family: Calibri;
+      color: #000c;
+    }
+
+    button:hover {
+      transition: 0.2s linear;
+      background-color: #b71c4d;
+      color: white;
+    }
+  }
 }

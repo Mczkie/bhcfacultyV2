@@ -13,9 +13,6 @@
     </div>
     <hr style="margin-bottom: 20px" />
     <mat-nav-list style="text-align: center">
-      <div class="nav-link" routerLink="todo-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
-        <mat-icon>list</mat-icon><span>Todo-list</span>
-      </div>
       <div class="nav-link" routerLink="classes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
         <mat-icon>class</mat-icon><span>Classes</span>
       </div>
@@ -39,7 +36,7 @@
         </button>
         <div class="toolbar-content">
           <h2 class="user-name" style="font-size: 16px">
-            {{ details[0].name }}
+            <b>Mr. {{ details[0].name }}</b>
           </h2>
           <p style="font-size: 16px">{{ details[0].domain }}</p>
         </div>

@@ -28,10 +28,6 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'todo-list',
-        component: TodoListComponent,
-      },
-      {
         path: 'classes',
         component: ClassesComponent,
         children: [

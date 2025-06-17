@@ -12,6 +12,10 @@ import {
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { DatePipe } from '@angular/common';
+
+
+
 
 @Component({
   selector: 'app-classes',
@@ -27,8 +31,9 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './classes.component.html',
   styleUrl: './classes.component.css',
 })
+
 export class ClassesComponent {
-  
+
   currentTime: Date = new Date();
 
   childActive = false;

@@ -103,62 +103,67 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
     {
       name: 'John Doe',
       role: 'Student',
-      email: ''
+      email: 'john.doe@example.edu'
     },
     {
       name: 'Jane Smith',
       role: 'Student',
-      email: ''
+      email: 'jane.smith@example.edu'
     },
     {
       name: 'Alice Johnson',
       role: 'Student',
-      email: ''
+      email: 'alice.johnson@example.edu'
     },
     {
       name: 'Bob Brown',
       role: 'Student',
-      email: ''
+      email: 'bob.brown@example.edu'
     },
     {
       name: 'Charlie Davis',
       role: 'Student',
-      email: ''
+      email: 'charlie.davis@example.edu'
     },
     {
       name: 'Eve White',
       role: 'Student',
-      email: ''
+      email: 'eve.white@example.edu'
     },
     {
       name: 'Frank Black',
       role: 'Student',
-      email: ''
+      email: 'frank.black@example.edu'
     },
     {
       name: 'Grace Green',
       role: 'Student',
-      email: ''
+      email: 'grace.green@example.edu'
     },
     {
       name: 'Hank Blue',
       role: 'Student',
-      email: ''
+      email: 'hank.blue@example.edu'
     },
     {
       name: 'Ivy Yellow',
       role: 'Student',
-      email: ''
+      email: 'ivy.yellow@example.edu'
     },
     {
       name: 'Jack Red',
       role: 'Student',
-      email: ''
+      email: 'jack.red@example.edu'
     },
     {
       name: 'Kathy Purple',
       role: 'Student',
-      email: ''
+      email: 'kathy.purple@example.edu'
+    },
+    {
+      name: 'Kathy Purple',
+      role: 'Student',
+      email: 'kathy.purple2@example.edu'
     }
   ];
 
@@ -191,11 +196,11 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
       grade: "A+"
     },
     {
-      studentName: "Alice Johnson",
-      workTitle: "Data Privacy in the Digital Age",
-      submissionDate: "2025-04-03",
-      feedback: "Interesting topic! Consider expanding your literature review.",
-      grade: "B+"
+      studentName: 'Alice Johnson',
+      workTitle: 'Data Privacy in the Digital Age',
+      submissionDate: '2025-04-03',
+      feedback: 'Interesting topic! Consider expanding your literature review,',
+      grade: 'B+'
     },
   ]
   

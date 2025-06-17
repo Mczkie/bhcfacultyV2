@@ -466,3 +466,101 @@ details p {
   }
 }
 
+@media (max-width: 480px) and (min-width: 300px) {
+  .student-work-card {
+    width: auto;
+    font-size: auto;
+    height: 13rem;
+  }
+
+  .class-nav {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .class-create-posts {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+  .class-create-posts .post-input {
+    width: 16rem;
+    position: relative;
+  }
+
+  .post-input matInput {
+    width: 10px;
+  }
+
+  .class-create-posts .btn-elevated-4 {
+    position: relative;
+    top: 10px;
+    right: 205px;
+    width: 90%;
+  }
+
+  .content-areas {
+    display: inline;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .side-content {
+    width: 100%;
+  }
+
+  .activities-content {
+    width: 100%;
+  }
+
+  .button-anes {
+    width: 100%;
+  }
+
+  /* activity & resources */
+
+  .activity-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  /* student works */
+
+  .student-work-card {
+    height: auto;
+  }
+
+  .student-work-card h1 {
+    font-size: 1rem;
+    line-height: 10px;
+  }
+
+  /* Class List */
+  .classList-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .class-profile-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20rem;
+  }
+
+  .profile-card {
+    width: 100%;
+    height: auto;
+  }
+}
+

@@ -1,8 +1,7 @@
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
-
 
 .sidenav-container {
   height: 100vh;
@@ -17,7 +16,6 @@ body {
   font-size: 1rem;
   border-bottom: 2px solid #fff;
 }
-
 
 .sidenav-profile {
   text-align: center;
@@ -53,7 +51,7 @@ body {
 
 mat-sidenav-content {
   z-index: 2;
-  background-color: #F8E2AE;
+  background-color: #fff;
   padding: 0;
   width: 90%;
   overflow: auto;
@@ -84,7 +82,7 @@ mat-sidenav-content {
 }
 
 .toolbar-content {
- margin-left: auto;
+  margin-left: auto;
 }
 
 .toolbar-content h2,
@@ -96,4 +94,14 @@ mat-sidenav-content {
 
 .success-snackbar {
   background-color: #f2f3ef;
+}
+
+@media (max-width: 480px) and (min-width: 300px) {
+  .sidenav-container {
+    height: auto;
+  }
+
+  mat-sidenav-content {
+  width: 100%;
+}
 }

@@ -35,7 +35,7 @@ export class DashboardComponent {
 
   details = [
     {
-      name: "Example Name",
+      name: "John Doe",
       domain: "2032323@example.com",
     },
   ];

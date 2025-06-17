@@ -68,3 +68,21 @@
     transform: scale(1.02);
     transition: transform 0.3s;
 }
+
+/* media queries */
+@media (max-width: 480px) and (min-width: 300px) {
+  .card-container {
+  display: grid;
+  grid-template-columns: auto ;
+  padding: 15px;
+  row-gap: 30px;
+}
+
+.custom-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+}
