@@ -65,36 +65,45 @@
           </mat-form-field>
           <div class="">
             <button matMiniFab class="btn-elevated">
-            <mat-icon class="img-icon">add_photo_alternate</mat-icon>
-          </button>
-          <button matMiniFab class="btn-elevated-2">
-            <mat-icon class="img-icon-2">video_call</mat-icon>
-          </button>
-          <button matMiniFab class="btn-elevated-3">
-            <mat-icon class="img-icon-3">attach_file</mat-icon>
-          </button>
-          <button matButton="elevated" class="btn-elevated-4">Posts</button>
+              <mat-icon class="img-icon">add_photo_alternate</mat-icon>
+            </button>
+            <button matMiniFab class="btn-elevated-2">
+              <mat-icon class="img-icon-2">video_call</mat-icon>
+            </button>
+            <button matMiniFab class="btn-elevated-3">
+              <mat-icon class="img-icon-3">attach_file</mat-icon>
+            </button>
+            <button matButton="elevated" class="btn-elevated-4">Posts</button>
           </div>
         </div>
+
         <div class="post-container">
           <h2>Post</h2>
-          <hr style="margin-bottom: 2rem;">
-          <mat-card class="post-card" style="padding: 10px">
-            <div class="post-header" >
-              
-              <mat-icon class="user-icon">account_circle</mat-icon>
-              <span class="username">John Doe</span>
+          <hr style="margin-bottom: 2rem" />
+          <div class="card-layout">
+            <mat-card class="post-card" style="padding: 10px">
+              <div class="post-header">
+                <mat-icon class="user-icon">account_circle</mat-icon>
+                <span class="username">John Doe</span>
+              </div>
+              <div class="post-content">
+                <p>This is a sample post content.</p>
+              </div>
+              <div class="post-actions">
+                <hr />
+                <button mat-button><mat-icon>thumb_up</mat-icon> Like</button>
+                <button mat-button><mat-icon>comment</mat-icon> Comment</button>
+              </div>
+            </mat-card>
+            <div class="iframe-container">
+              <iframe
+                src="https://www.youtube.com/embed/wCzuAMVmIZ8?autoplay=1&mute=1&playsinline=1"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              >
+              </iframe>
             </div>
-            <div class="post-content">
-              <p>This is a sample post content.</p>
-            </div>
-            <div class="post-actions">
-              <hr />
-              <button mat-button> <mat-icon>thumb_up</mat-icon> Like</button>
-              <button mat-button><mat-icon>comment</mat-icon> Comment</button>
-            </div>
-          </mat-card>
-          <!-- More posts can be added here -->
+          </div>
         </div>
       </section>
       <div class="vertical-line"></div>
@@ -120,7 +129,7 @@
                   <mat-icon class="user-icon">update</mat-icon>
                 </div>
                 <div style="margin: 20px">
-                  <h3>Class: {{ contentActivites.activityName }}</h3>
+                  <h3>Activity: {{ contentActivites.activityName }}</h3>
                   <p>Due: {{ contentActivites.activityDate }}</p>
                 </div>
               </div>
@@ -153,7 +162,9 @@
             <h5>{{ resource.resourceName }}</h5>
             <p>{{ resource.resourceDescription }}</p>
             <a
-              *ngIf="resource.resource && resource.resource !== 'No Resource'"
+              *ngIf="
+                resource.resourceLink && resource.resourceLink !== 'No Resource'
+              "
               [href]="resource.resourceLink"
               target="_blank"
             >
@@ -257,8 +268,7 @@
           >
             <h1>{{ profile.name }}</h1>
             <p>{{ profile.role }}</p>
-            <p>{{ profile.email}}</p>
-            
+            <p>{{ profile.email }}</p>
           </mat-card>
         </div>
       </section>
@@ -325,7 +335,7 @@
                 <mat-label>Type your message...</mat-label>
                 <textarea matInput rows="3"></textarea>
               </mat-form-field>
-              <button mat-icon-button color="primary">
+              <button mat-icon-button color="primary" (click)="sendAction()">
                 <mat-icon>send</mat-icon>
               </button>
             </div>

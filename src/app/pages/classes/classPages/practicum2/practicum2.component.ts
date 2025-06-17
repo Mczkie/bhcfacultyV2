@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 interface Contact {
@@ -34,31 +35,54 @@ export class Practicum2Component {
     this.setActiveTab("Activities/Resources");
   }
 
-  activies = [
+  activities = [
     {
-      activityName: "Research and Development",
-      activityDate: "Saturday, April 4, 2025, 00:00 PM",
+      activityName: "Field Experience Orientation",
+      activityDate: "Monday, April 7, 2025, 09:00 AM - 11:00 AM",
       resources: [
         {
-          resourceDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-          resourceName: "Resource 1",
-          resourceLink: "https://material.angular.dev/",
-          resourceType: "Video",
+          resourceDescription: `Overview of practicum/internship expectations, site requirements, and professional conduct. Includes orientation materials and a checklist for students to review before starting their placement.`,
+          resourceName: "Orientation Guide",
+          resourceLink: "https://www.naceweb.org/career-readiness/competencies/orientation-guide/",
+          resourceType: "Document",
         },
       ],
     },
     {
-      activityName: "activity 2: BMC",
-      activityDate: "Monday, 04:00 pm - 05:00 pm",
+      activityName: "Internship Weekly Progress Meeting",
+      activityDate: "Wednesday, 02:00 PM - 03:00 PM",
+      resources: [
+        {
+          resourceDescription: `Weekly check-in meeting to discuss progress, challenges, and learning goals. Students should prepare a brief summary of their activities and any questions for their supervisor.`,
+          resourceName: "Progress Meeting Agenda",
+          resourceLink: "https://www.internships.com/progress-meeting-agenda",
+          resourceType: "Template",
+        },
+      ],
     },
     {
-      activityName: "Activity 3: Thesis Proposal",
-      activityDate: "Tuesday, 08:00 AM - 10:00 AM",
+      activityName: "Midterm Evaluation",
+      activityDate: "Friday, April 25, 2025, 10:00 AM - 11:00 AM",
+      resources: [
+        {
+          resourceDescription: `Midterm evaluation form for supervisors to assess student performance and provide feedback. Students should review the evaluation criteria in advance.`,
+          resourceName: "Midterm Evaluation Form",
+          resourceLink: "https://www.linkedin.com/learning/midterm-evaluation-form",
+          resourceType: "Form",
+        },
+      ],
     },
     {
-      activityName: "Activity 4: 100 paragraph essay",
-      activityDate: "Monday, 12:00 PM - 02:30 PM",
+      activityName: "Final Presentation",
+      activityDate: "Thursday, May 15, 2025, 01:00 PM - 03:00 PM",
+      resources: [
+        {
+          resourceDescription: `Students present a summary of their practicum or internship experience, key projects, and learning outcomes. Presentation guidelines and sample slides provided.`,
+          resourceName: "Final Presentation Guidelines",
+          resourceLink: "https://www.dol.gov/agencies/whd/fact-sheets/71-flsa-internships",
+          resourceType: "Guide",
+        },
+      ],
     },
   ];
 
@@ -92,64 +116,88 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
     {
       name: 'John Doe',
       role: 'Student',
-      email: ''
+      email: 'john.doe@email.com'
     },
     {
       name: 'Jane Smith',
       role: 'Student',
-      email: ''
+      email: 'jane.smith@email.com'
     },
     {
       name: 'Alice Johnson',
       role: 'Student',
-      email: ''
+      email: 'alice.johnson@email.com'
     },
     {
       name: 'Bob Brown',
       role: 'Student',
-      email: ''
+      email: 'bob.brown@email.com'
     },
     {
       name: 'Charlie Davis',
       role: 'Student',
-      email: ''
+      email: 'charlie.davis@email.com'
     },
     {
       name: 'Eve White',
       role: 'Student',
-      email: ''
+      email: 'eve.white@email.com'
     },
     {
       name: 'Frank Black',
       role: 'Student',
-      email: ''
+      email: 'frank.black@email.com'
     },
     {
       name: 'Grace Green',
       role: 'Student',
-      email: ''
+      email: 'grace.green@email.com'
     },
     {
       name: 'Hank Blue',
       role: 'Student',
-      email: ''
+      email: 'hank.blue@email.com'
     },
     {
       name: 'Ivy Yellow',
       role: 'Student',
-      email: ''
+      email: 'ivy.yellow@email.com'
     },
     {
       name: 'Jack Red',
       role: 'Student',
-      email: ''
+      email: 'jack.red@email.com'
     },
     {
       name: 'Kathy Purple',
       role: 'Student',
-      email: ''
+      email: 'kathy.purple@email.com'
     }
   ];
+
+  studentWorks = [
+    {
+      studentName: "John Doe",
+      workTitle: "Practicum Report: Software Development Internship at TechCorp",
+      submissionDate: "2025-04-01",
+      feedback: "Excellent reflection on your internship experience. Consider elaborating on the challenges faced.",
+      grade: "A"
+    },
+    {
+      studentName: "Jane Smith",
+      workTitle: "Internship Project: Data Analysis at HealthCare Inc.",
+      submissionDate: "2025-04-02",
+      feedback: "Strong analysis and clear presentation of your project outcomes.",
+      grade: "A+"
+    },
+    {
+      studentName: 'Alice Johnson',
+      workTitle: 'Practicum Reflection: Marketing Internship at AdWorks',
+      submissionDate: '2025-04-03',
+      feedback: 'Good insights into your learning process. Expand on teamwork experiences.',
+      grade: 'B+'
+    },
+  ]
 
      selectedContact: Contact | null = null;
   
@@ -163,4 +211,35 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
   selectContact(contact: Contact) {
     this.selectedContact = contact;
   }
+
+  constructor(private snackBar: MatSnackBar) {}
+
+  sentAction() {
+    this.snackBar.open('Sent Success', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['success-snackbar']
+    })
+  }
+
+  invalidAction() {
+    this.snackBar.open('Not Sent try again!', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['failed-snackbar']
+    })
+  }
+  sendAction() {
+    if(!this.wasSent){
+      this.wasSent = true;
+      setTimeout(() => {
+        this.sentAction()
+      }, 1500);
+    }else{
+      this.invalidAction();
+    }
+  }
+  wasSent = false;
 }

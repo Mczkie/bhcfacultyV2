@@ -2,6 +2,10 @@
   font-family: sans-serif, poppins;
 }
 
+.body {
+  margin-top: 6rem;
+}
+
 .card-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -19,9 +23,17 @@
 }
 
 .card-header {
-  background-color: #b71c4d;
-  color: white;
-  padding: 20px;
+  background-image: radial-gradient(circle at 77% 43%, rgba(168, 168, 168, 0.04) 0%, rgba(168, 168, 168, 0.04) 50%, rgba(10, 10, 10, 0.04) 50%, rgba(10, 10, 10, 0.04) 100%), 
+    radial-gradient(circle at 33% 65%, rgba(248, 248, 248, 0.04) 0%, rgba(248, 248, 248, 0.04) 50%, rgba(228, 228, 228, 0.04) 50%, rgba(228, 228, 228, 0.04) 100%), 
+    radial-gradient(circle at 92% 79%, rgba(152, 152, 152, 0.04) 0%, rgba(152, 152, 152, 0.04) 50%, rgba(28, 28, 28, 0.04) 50%, rgba(28, 28, 28, 0.04) 100%), 
+    radial-gradient(circle at 91% 13%, rgba(41, 41, 41, 0.04) 0%, rgba(41, 41, 41, 0.04) 50%, rgba(214, 214, 214, 0.04) 50%, rgba(214, 214, 214, 0.04) 100%), 
+    linear-gradient(90deg,  #800000, rgb(9, 102, 168));
+  color: #fff;
+  padding: 20px 20px 16px 20px;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 
   .class-code {
     font-weight: bold;

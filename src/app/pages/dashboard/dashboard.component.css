@@ -75,10 +75,11 @@ mat-sidenav-content {
   z-index: 1000;
   background: #fff;
   color: #000;
-  width: 100%;
+  width: 90%;
   overflow: hidden;
   padding: 0 10px; /* Optional for spacing */
   box-shadow: 0 10px 7px rgba(0, 0, 0, 0.1);
+  position: fixed;
 }
 
 .toolbar-content {
@@ -103,5 +104,20 @@ mat-sidenav-content {
 
   mat-sidenav-content {
   width: 100%;
+}
+
+.toolbar {
+  position: fixed;
+  margin: 0 0 2rem;
+  width: 100%;
+}
+
+  mat-sidenav-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom-sidenav {
+  position: fixed;
 }
 }

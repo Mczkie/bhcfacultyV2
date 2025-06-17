@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
-
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 interface Contact {
   id: number;
   name: string;
@@ -36,7 +36,7 @@ export class IntelligentSystemsLecComponent {
     this.setActiveTab("Activities/Resources");
   }
 
-  activies = [
+  activities = [
     {
       activityName: "Research and Development",
       activityDate: "Saturday, April 4, 2025, 00:00 PM",
@@ -94,63 +94,87 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
     {
       name: 'John Doe',
       role: 'Student',
-      email: ''
+      email: 'johndoe@example.com'
     },
     {
       name: 'Jane Smith',
       role: 'Student',
-      email: ''
+      email: 'janesmith@example.com'
     },
     {
       name: 'Alice Johnson',
       role: 'Student',
-      email: ''
+      email: 'alice.johnson@example.com'
     },
     {
       name: 'Bob Brown',
       role: 'Student',
-      email: ''
+      email: 'bob.brown@example.com'
     },
     {
       name: 'Charlie Davis',
       role: 'Student',
-      email: ''
+      email: 'charlie.davis@example.com'
     },
     {
       name: 'Eve White',
       role: 'Student',
-      email: ''
+      email: 'eve.white@example.com'
     },
     {
       name: 'Frank Black',
       role: 'Student',
-      email: ''
+      email: 'frank.black@example.com'
     },
     {
       name: 'Grace Green',
       role: 'Student',
-      email: ''
+      email: 'grace.green@example.com'
     },
     {
       name: 'Hank Blue',
       role: 'Student',
-      email: ''
+      email: 'hank.blue@example.com'
     },
     {
       name: 'Ivy Yellow',
       role: 'Student',
-      email: ''
+      email: 'ivy.yellow@example.com'
     },
     {
       name: 'Jack Red',
       role: 'Student',
-      email: ''
+      email: 'jack.red@example.com'
     },
     {
       name: 'Kathy Purple',
       role: 'Student',
-      email: ''
+      email: 'kathy.purple@example.com'
     }
+  ];
+
+  studentWorks = [
+    {
+      studentName: "John Doe",
+      workTitle: "Neural Network Implementation",
+      submissionDate: "2025-04-01",
+      feedback: "Impressive implementation of a basic neural network. Consider experimenting with different activation functions.",
+      grade: "A"
+    },
+    {
+      studentName: "Jane Smith",
+      workTitle: "Expert Systems Case Study",
+      submissionDate: "2025-04-02",
+      feedback: "Well-researched case study on expert systems. Expand on the inference engine section for more depth.",
+      grade: "A-"
+    },
+    {
+      studentName: 'Alice Johnson',
+      workTitle: 'Machine Learning Algorithms Comparison',
+      submissionDate: '2025-04-03',
+      feedback: 'Good comparison of supervised and unsupervised algorithms. Include more real-world applications.',
+      grade: 'B+'
+    },
   ];
 
      selectedContact: Contact | null = null;
@@ -165,5 +189,36 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
   selectContact(contact: Contact) {
     this.selectedContact = contact;
   }
+
+  constructor(private snackBar: MatSnackBar) {}
+
+  sentAction() {
+    this.snackBar.open('Sent Success', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['success-snackbar']
+    })
+  }
+
+  invalidAction() {
+    this.snackBar.open('Not Sent try again!', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['failed-snackbar']
+    })
+  }
+  sendAction() {
+    if(!this.wasSent){
+      this.wasSent = true;
+      setTimeout(() => {
+        this.sentAction()
+      }, 1500);
+    }else{
+      this.invalidAction();
+    }
+  }
+  wasSent = false;
 }
 

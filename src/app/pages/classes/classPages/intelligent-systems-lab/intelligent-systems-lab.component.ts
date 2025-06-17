@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-intelligent-systems-lab',
@@ -28,31 +29,54 @@ export class IntelligentSystemsLabComponent {
     this.setActiveTab("Activities/Resources");
   }
 
-  activies = [
+  activities = [
     {
-      activityName: "Research and Development",
-      activityDate: "Saturday, April 4, 2025, 00:00 PM",
+      activityName: "Introduction to Intelligent Systems",
+      activityDate: "Monday, April 7, 2025, 09:00 AM - 11:00 AM",
       resources: [
         {
-          resourceDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-          resourceName: "Resource 1",
-          resourceLink: "https://material.angular.dev/",
+          resourceDescription: `Overview of intelligent systems, their applications, and basic concepts in artificial intelligence. Includes setup instructions for lab environment and introductory exercises.`,
+          resourceName: "Lab 1 Guide",
+          resourceLink: "https://example.com/intelligent-systems-lab1-guide",
+          resourceType: "Document",
+        },
+      ],
+    },
+    {
+      activityName: " Machine Learning Basics",
+      activityDate: "Wednesday, April 9, 2025, 09:00 AM - 11:00 AM",
+      resources: [
+        {
+          resourceDescription: `Hands-on activities with supervised and unsupervised learning algorithms. Students will implement simple classifiers and clustering algorithms.`,
+          resourceName: "Machine Learning Lab Sheet",
+          resourceLink: "https://example.com/ml-lab-sheet",
+          resourceType: "PDF",
+        },
+      ],
+    },
+    {
+      activityName: " Neural Networks Implementation",
+      activityDate: "Friday, April 11, 2025, 09:00 AM - 11:00 AM",
+      resources: [
+        {
+          resourceDescription: `Build and train a basic neural network using Python. Analyze performance and experiment with different architectures.`,
+          resourceName: "Neural Networks Tutorial",
+          resourceLink: "https://example.com/neural-networks-tutorial",
           resourceType: "Video",
         },
       ],
     },
     {
-      activityName: "activity 2: BMC",
-      activityDate: "Monday, 04:00 pm - 05:00 pm",
-    },
-    {
-      activityName: "Activity 3: Thesis Proposal",
-      activityDate: "Tuesday, 08:00 AM - 10:00 AM",
-    },
-    {
-      activityName: "Activity 4: 100 paragraph essay",
-      activityDate: "Monday, 12:00 PM - 02:30 PM",
+      activityName: "Robotics and Intelligent Agents",
+      activityDate: "Monday, April 14, 2025, 09:00 AM - 11:00 AM",
+      resources: [
+        {
+          resourceDescription: `Explore the fundamentals of robotics and agent-based systems. Includes simulation exercises and real-world applications.`,
+          resourceName: "Robotics Lab Instructions",
+          resourceLink: "https://example.com/robotics-lab-instructions",
+          resourceType: "Document",
+        },
+      ],
     },
   ];
   classResources = [
@@ -85,64 +109,88 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
     {
       name: 'John Doe',
       role: 'Student',
-      email: ''
+      email: 'johndoe@example.com'
     },
     {
       name: 'Jane Smith',
       role: 'Student',
-      email: ''
+      email: 'janesmith@example.com'
     },
     {
       name: 'Alice Johnson',
       role: 'Student',
-      email: ''
+      email: 'alice.johnson@example.com'
     },
     {
       name: 'Bob Brown',
       role: 'Student',
-      email: ''
+      email: 'bob.brown@example.com'
     },
     {
       name: 'Charlie Davis',
       role: 'Student',
-      email: ''
+      email: 'charlie.davis@example.com'
     },
     {
       name: 'Eve White',
       role: 'Student',
-      email: ''
+      email: 'eve.white@example.com'
     },
     {
       name: 'Frank Black',
       role: 'Student',
-      email: ''
+      email: 'frank.black@example.com'
     },
     {
       name: 'Grace Green',
       role: 'Student',
-      email: ''
+      email: 'grace.green@example.com'
     },
     {
       name: 'Hank Blue',
       role: 'Student',
-      email: ''
+      email: 'hank.blue@example.com'
     },
     {
       name: 'Ivy Yellow',
       role: 'Student',
-      email: ''
+      email: 'ivy.yellow@example.com'
     },
     {
       name: 'Jack Red',
       role: 'Student',
-      email: ''
+      email: 'jack.red@example.com'
     },
     {
       name: 'Kathy Purple',
       role: 'Student',
-      email: ''
+      email: 'kathy.purple@example.com'
     }
   ];
+
+  studentWorks = [
+    {
+      studentName: "John Doe",
+      workTitle: "Neural Network Implementation",
+      submissionDate: "2025-04-01",
+      feedback: "Impressive implementation of a feedforward neural network. Consider experimenting with different activation functions.",
+      grade: "A"
+    },
+    {
+      studentName: "Jane Smith",
+      workTitle: "Fuzzy Logic Controller Design",
+      submissionDate: "2025-04-02",
+      feedback: "Good application of fuzzy logic concepts. Try to provide more real-world use cases.",
+      grade: "A-"
+    },
+    {
+      studentName: 'Alice Johnson',
+      workTitle: 'Genetic Algorithm for Optimization',
+      submissionDate: '2025-04-03',
+      feedback: 'Well-structured genetic algorithm. Improve documentation and discuss parameter tuning.',
+      grade: 'B+'
+    },
+  ]
 
      selectedContact: Contact | null = null;
   
@@ -156,6 +204,37 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
   selectContact(contact: Contact) {
     this.selectedContact = contact;
   }
+
+  constructor(private snackBar: MatSnackBar) {}
+
+  sentAction() {
+    this.snackBar.open('Sent Success', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['success-snackbar']
+    })
+  }
+
+  invalidAction() {
+    this.snackBar.open('Not Sent try again!', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['failed-snackbar']
+    })
+  }
+  sendAction() {
+    if(!this.wasSent){
+      this.wasSent = true;
+      setTimeout(() => {
+        this.sentAction()
+      }, 1500);
+    }else{
+      this.invalidAction();
+    }
+  }
+  wasSent = false;
 }
 
 interface Contact {

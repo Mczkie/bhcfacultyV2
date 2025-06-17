@@ -4,6 +4,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIcon, MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCard, MatCardModule } from "@angular/material/card";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 
 interface Contact {
   id: number;
@@ -71,6 +72,10 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
       activityName: "Activity 4: 100 paragraph essay",
       activityDate: "Monday, 12:00 PM - 02:30 PM",
     },
+    {
+      activityName: "Activity 5: Poster",
+      activityDate: "Monday, 12:00 PM - 02:30 PM",
+    }
   ];
 
   classResources = [
@@ -203,5 +208,36 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
       grade: 'B+'
     },
   ]
+  
+  constructor(private snackBar: MatSnackBar) {}
+
+  sentAction() {
+    this.snackBar.open('Sent Success', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['success-snackbar']
+    })
+  }
+
+  invalidAction() {
+    this.snackBar.open('Not Sent try again!', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['failed-snackbar']
+    })
+  }
+  sendAction() {
+    if(!this.wasSent){
+      this.wasSent = true;
+      setTimeout(() => {
+        this.sentAction()
+      }, 1500);
+    }else{
+      this.invalidAction();
+    }
+  }
+  wasSent = false;
   
 }

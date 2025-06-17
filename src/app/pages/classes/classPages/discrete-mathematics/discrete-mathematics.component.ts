@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-discrete-mathematics',
@@ -23,6 +24,8 @@ import { MatCard, MatCardModule } from '@angular/material/card';
   styleUrl: './discrete-mathematics.component.css',
 })
 export class DiscreteMathematicsComponent {
+  constructor(private snackBar: MatSnackBar) {}
+
   activeTab: string = 'Class Feed';
 
   setActiveTab(tabName: string): void {
@@ -39,35 +42,64 @@ export class DiscreteMathematicsComponent {
     this.setActiveTab("Activities/Resources");
   }
 
-  activies = [
+  activities = [
     {
-      activityName: "Research and Development",
-      activityDate: "Saturday, April 4, 2025, 00:00 PM",
-      activityPoints: 100,
+      activityName: "Logic and Proof Workshop",
+      activityDate: "Monday, April 7, 2025, 10:00 AM - 12:00 PM",
+      activityPoints: 40,
       resources: [
         {
-          resourceDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-          resourceName: "Resource 1",
-          resourceLink: "https://material.angular.dev/",
+          resourceDescription: "A video introduction to propositional logic and proof strategies.",
+          resourceName: "Introduction to Logic",
+          resourceLink: "https://www.youtube.com/watch?v=6cMhzMHtVnM",
           resourceType: "Video",
+        },
+        {
+          resourceDescription: "Practice problems on logical equivalence and basic proof techniques.",
+          resourceName: "Logic Practice Set",
+          resourceLink: "https://brilliant.org/practice/logic-proofs/",
+          resourceType: "Website",
         },
       ],
     },
     {
-      activityName: "activity 2: BMC",
-      activityDate: "Monday, 04:00 pm - 05:00 pm",
-      activityPoints: 60,
+      activityName: "Set Theory and Functions Assignment",
+      activityDate: "Wednesday, April 9, 2025, 11:00 AM - 01:00 PM",
+      activityPoints: 30,
+      resources: [
+        {
+          resourceDescription: "Lecture notes on sets, subsets, and functions.",
+          resourceName: "Set Theory Notes",
+          resourceLink: "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2005/resources/lecture-notes/",
+          resourceType: "Document",
+        },
+      ],
     },
     {
-      activityName: "Activity 3: Thesis Proposal",
-      activityDate: "Tuesday, 08:00 AM - 10:00 AM",
-      activityPoints: 20,
-    },
-    {
-      activityName: "Activity 4: 100 paragraph essay",
-      activityDate: "Monday, 12:00 PM - 02:30 PM",
+      activityName: "Combinatorics Problem Solving",
+      activityDate: "Friday, April 11, 2025, 09:00 AM - 11:00 AM",
       activityPoints: 50,
+      resources: [
+        {
+          resourceDescription: "Interactive exercises on permutations and combinations.",
+          resourceName: "Combinatorics Practice",
+          resourceLink: "https://www.khanacademy.org/math/statistics-probability/counting-permutations-and-combinations",
+          resourceType: "Website",
+        },
+      ],
+    },
+    {
+      activityName: "Graph Theory Exploration",
+      activityDate: "Monday, April 14, 2025, 02:00 PM - 04:00 PM",
+      activityPoints: 60,
+      resources: [
+        {
+          resourceDescription: "Overview of basic graph theory concepts and applications.",
+          resourceName: "Graph Theory Basics",
+          resourceLink: "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/",
+          resourceType: "Website",
+        },
+      ],
     },
   ];
 
@@ -102,64 +134,89 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
     {
       name: 'John Doe',
       role: 'Student',
-      email: ''
+      email: 'john.doe@example.com'
     },
     {
       name: 'Jane Smith',
       role: 'Student',
-      email: ''
+      email: 'jane.smith@example.com'
     },
     {
       name: 'Alice Johnson',
       role: 'Student',
-      email: ''
+      email: 'alice.johnson@example.com'
     },
     {
       name: 'Bob Brown',
       role: 'Student',
-      email: ''
+      email: 'bob.brown@example.com'
     },
     {
       name: 'Charlie Davis',
       role: 'Student',
-      email: ''
+      email: 'charlie.davis@example.com'
     },
     {
       name: 'Eve White',
       role: 'Student',
-      email: ''
+      email: 'eve.white@example.com'
     },
     {
       name: 'Frank Black',
       role: 'Student',
-      email: ''
+      email: 'frank.black@example.com'
     },
     {
       name: 'Grace Green',
       role: 'Student',
-      email: ''
+      email: 'grace.green@example.com'
     },
     {
       name: 'Hank Blue',
       role: 'Student',
-      email: ''
+      email: 'hank.blue@example.com'
     },
     {
       name: 'Ivy Yellow',
       role: 'Student',
-      email: ''
+      email: 'ivy.yellow@example.com'
     },
     {
       name: 'Jack Red',
       role: 'Student',
-      email: ''
+      email: 'jack.red@example.com'
     },
     {
       name: 'Kathy Purple',
       role: 'Student',
-      email: ''
+      email: 'kathy.purple@example.com'
     }
   ];
+
+
+  studentWorks = [
+    {
+      studentName: "John Doe",
+      workTitle: "Graph Theory Applications",
+      submissionDate: "2025-04-01",
+      feedback: "Excellent exploration of real-world graph problems. Try to include more examples on Eulerian paths.",
+      grade: "A"
+    },
+    {
+      studentName: "Jane Smith",
+      workTitle: "Combinatorics and Counting Principles",
+      submissionDate: "2025-04-02",
+      feedback: "Great use of combinatorial arguments. Clarify your explanation of the pigeonhole principle.",
+      grade: "A-"
+    },
+    {
+      studentName: 'Alice Johnson',
+      workTitle: 'Logic and Proof Techniques',
+      submissionDate: '2025-04-03',
+      feedback: 'Solid understanding of direct and indirect proofs. Work on proof by contradiction.',
+      grade: 'B+'
+    },
+  ]
 
      selectedContact: Contact | null = null;
   
@@ -173,6 +230,35 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
   selectContact(contact: Contact) {
     this.selectedContact = contact;
   }
+
+  sentAction() {
+    this.snackBar.open('Sent Success', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['success-snackbar']
+    })
+  }
+
+  invalidAction() {
+    this.snackBar.open('Not Sent try again!', 'close', {
+      duration: 1500,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['failed-snackbar']
+    })
+  }
+  sendAction() {
+    if(!this.wasSent){
+      this.wasSent = true;
+      setTimeout(() => {
+        this.sentAction()
+      }, 1500);
+    }else{
+      this.invalidAction();
+    }
+  }
+  wasSent = false;
 }
 
 interface Contact {
@@ -181,3 +267,6 @@ interface Contact {
   title: string;
   department?: string;
 }
+
+
+

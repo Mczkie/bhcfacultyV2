@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatCard, MatCardTitle, MatCardHeader, MatCardSubtitle } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
 import { MatCell, MatTableModule } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-discrete-mathematics',
@@ -11,6 +13,7 @@ import { MatCell, MatTableModule } from '@angular/material/table';
     MatCardSubtitle,
     MatTableModule,
     MatCell,
+    MatIcon
   ],
   templateUrl: './discrete-mathematics.component.html',
   styleUrl: './discrete-mathematics.component.css'
@@ -29,4 +32,10 @@ export class DiscreteMathematicsComponent {
     const total = this.evaluationData.reduce((sum, item) => sum + item.score, 0);
     return (total / this.evaluationData.length).toFixed(2) as unknown as number;
   }
+
+  goBack() {
+    this.router.navigate(['Bataan-heroes-lamp/dashboard', 'faculty-evaluation']);
+  }
+  constructor(private router: Router) {}
 }
+

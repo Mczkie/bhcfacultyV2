@@ -13,6 +13,7 @@
   padding: 9px;
   display: flex;
   align-items: center;
+  margin-top: 4rem;
 }
 
 .class-info {
@@ -48,6 +49,13 @@
   align-items: stretch;
 }
 
+.content-areas {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: auto;
+}
+
 .vertical-line {
   width: 2px;
   height: auto;
@@ -64,6 +72,24 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+}
+
+.activities-content {
+  height: auto;
+  padding: 10px;
+}
+
+.activity-section {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.classList-section {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
 
 .post {
@@ -169,6 +195,7 @@
   width: 40px;
   margin: 16px 0 0 10px;
 }
+
 
 .post-input {
   margin: 16px 0 0 11px;
@@ -287,19 +314,25 @@
   justify-content: center;
   margin-bottom: 20px;
   padding: 20px;
-} 
+  width: auto;
+}
 
 .class-profile-card {
   width: 250px;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 12px;
-  padding: 20px;
+  padding: 0px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  height: 100px;
-  padding: 0;
-  line-height: 0px;
+  height: auto;
+  line-height: 200%;
 }
+
+.class-profile-card h1,
+.class-profile-card p {
+  line-height: 200%;
+}
+
 .class-profile-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: scaleX(1.02) scaleY(1.02);
@@ -316,16 +349,16 @@ details p {
 .resource-details .details-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 5s ease;
+  transition: max-height 0.3s ease;
 }
 
 .resource-details[open] .details-content {
-  max-height: 200px;
+  max-height: 500px; /* Adjust as needed */
 }
 
 .messaging-container {
   display: flex;
-  height: calc(100vh - 64px); 
+  height: calc(100vh - 64px);
   background-color: #f5f5f5;
 }
 
@@ -340,7 +373,7 @@ details p {
 .search-container {
   padding: 16px;
   background-color: #f5f5f5;
-  
+
   .search-field {
     width: 100%;
   }
@@ -357,11 +390,11 @@ details p {
   padding: 12px 16px;
   cursor: pointer;
   transition: background-color 0.2s;
-  
+
   &:hover {
     background-color: #f5f5f5;
   }
-  
+
   &.active {
     background-color: #e3f2fd;
   }
@@ -369,7 +402,7 @@ details p {
 
 .contact-avatar {
   margin-right: 12px;
-  
+
   mat-icon {
     font-size: 40px;
     width: 40px;
@@ -382,7 +415,7 @@ details p {
   .contact-name {
     font-weight: 500;
   }
-  
+
   .contact-title {
     font-size: 0.8rem;
     color: #757575;
@@ -404,10 +437,10 @@ details p {
 .recipient-info {
   display: flex;
   align-items: center;
-  
+
   .recipient-avatar {
     margin-right: 12px;
-    
+
     mat-icon {
       font-size: 48px;
       width: 48px;
@@ -415,12 +448,12 @@ details p {
       color: #757575;
     }
   }
-  
+
   .recipient-name {
     font-weight: 500;
     font-size: 1.2rem;
   }
-  
+
   .recipient-title {
     color: #757575;
   }
@@ -434,14 +467,14 @@ details p {
   height: 300px;
   color: #757575;
   text-align: center;
-  
+
   .info-icon {
     font-size: 48px;
     width: 48px;
     height: 48px;
     margin-bottom: 16px;
   }
-  
+
   h3 {
     margin: 8px 0;
     font-weight: 500;
@@ -459,9 +492,190 @@ details p {
   align-items: center;
   padding: 16px;
   border-top: 1px solid #e0e0e0;
-  
+
   .message-input {
     flex: 1;
     margin-right: 8px;
   }
 }
+
+.student-works-container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.student-work-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  height: auto;
+  line-height: normal;
+}
+
+.student-work-card button {
+  border: 1px solid #000;
+  margin-top: 10px;
+}
+
+.iframe-container {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border: 2px solid #000;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (max-width: 480px) and (min-width: 300px) {
+  .class-contents {
+    width: 100%;
+    height: auto;
+  }
+
+  .student-work-card {
+    width: 100%;
+    font-size: auto;
+    height: 13rem;
+  }
+
+  .class-nav {
+    overflow-y: hidden;
+  }
+
+  .class-create-posts {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+  .class-create-posts .post-input {
+    width: 18.3rem;
+    position: relative;
+  }
+
+  .post-input matInput {
+    width: 10px;
+  }
+
+  .class-create-posts .btn-elevated-4 {
+    position: relative;
+    top: 10px;
+    right: 205px;
+    width: 90%;
+  }
+
+  .content-areas {
+    display: inline;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .side-content {
+    width: 95%;
+    margin-top: 2rem;
+  }
+
+  .activities-content {
+    width: 100%;
+  }
+
+  .button-anes {
+    width: 100%;
+  }
+
+  /* activity & resources */
+
+  .activity-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  /* student works */
+
+  .student-work-card {
+    height: auto;
+  }
+
+  .student-work-card h1 {
+    font-size: 1rem;
+    line-height: 10px;
+  }
+
+  /* Class List */
+  .classList-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .class-profile-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20rem;
+  }
+
+  .profile-card {
+    width: 100%;
+    height: auto;
+  }
+
+  /* messaging queries */
+
+  .messaging-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contacts-sidebar {
+    width: 100%;
+    background-color: white;
+  }
+
+  .contacts-list {
+    display: flex;
+    width: 100%;
+  }
+
+  .contact-card {
+    width: 100%;
+  }
+ 
+}
+
+

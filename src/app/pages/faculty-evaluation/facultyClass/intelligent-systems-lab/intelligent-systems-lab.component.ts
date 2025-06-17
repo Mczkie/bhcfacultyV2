@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatCard, MatCardTitle, MatCardHeader, MatCardSubtitle } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
 import { MatCell, MatTableModule } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intelligent-systems-lab',
@@ -10,7 +12,8 @@ import { MatCell, MatTableModule } from '@angular/material/table';
     MatCardHeader,
     MatCardSubtitle,
     MatTableModule,
-    MatCell
+    MatCell,
+    MatIcon
   ],
   templateUrl: './intelligent-systems-lab.component.html',
   styleUrl: './intelligent-systems-lab.component.css'
@@ -30,4 +33,9 @@ export class IntelligentSystemsLabComponent {
     const total = this.evaluationData.reduce((sum, item) => sum + item.score, 0);
     return (total / this.evaluationData.length).toFixed(2) as unknown as number;
   }
+
+  goBack() {
+    this.router.navigate(['Bataan-heroes-lamp/dashboard', 'faculty-evaluation']);
+  }
+  constructor(private router: Router) {}
 }
