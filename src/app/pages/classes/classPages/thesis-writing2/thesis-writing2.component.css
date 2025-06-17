@@ -314,6 +314,16 @@ details p {
   cursor: auto;
 }
 
+.resource-details .details-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.resource-details[open] .details-content {
+  max-height: 500px; /* Adjust as needed */
+}
+
 .messaging-container {
   display: flex;
   height: calc(100vh - 64px); 
@@ -455,4 +465,42 @@ details p {
     flex: 1;
     margin-right: 8px;
   }
+}
+
+.student-works-container{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.student-work-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  height: auto;
+  line-height: normal;
+}
+
+.student-work-card button {
+  border: 1px solid #000;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .student-works-container {
+    background-color: lightblue;
+  }
+  .student-work-card {
+    width: auto;
+    font-size: auto;
+  }
+
+  .class-nav {
+    overflow: scroll;
+  }
+
 }

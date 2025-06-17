@@ -313,6 +313,16 @@ details p {
   cursor: auto;
 }
 
+.resource-details .details-content {
+ max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s linear;
+}
+
+.resource-details[open] .details-content {
+  max-height: 500px;
+}
+
 .messaging-container {
   display: flex;
   height: calc(100vh - 64px); 
@@ -455,3 +465,4 @@ details p {
     margin-right: 8px;
   }
 }
+

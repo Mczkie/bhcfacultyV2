@@ -313,6 +313,17 @@ details p {
   cursor: auto;
 }
 
+.resource-details .details-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in;
+}
+
+/* When details is open, expand the content */
+.resource-details[open] .details-content {
+  max-height: 500px; /* Adjust based on expected content height */
+}
+
 .messaging-container {
   display: flex;
   height: calc(100vh - 64px); 

@@ -174,4 +174,29 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
   selectContact(contact: Contact) {
     this.selectedContact = contact;
   }
+
+  studentWorks = [
+    {
+      studentName: "John Doe",
+      workTitle: "Thesis Proposal on AI Ethics",
+      submissionDate: "2025-04-01",
+      feedback: "Great job on the proposal! Make sure to include more recent sources.",
+      grade: "A"
+    },
+    {
+      studentName: "Jane Smith",
+      workTitle: "Machine Learning Algorithms",
+      submissionDate: "2025-04-02",
+      feedback: "Well done! Your analysis is thorough and well-supported.",
+      grade: "A+"
+    },
+    {
+      studentName: "Alice Johnson",
+      workTitle: "Data Privacy in the Digital Age",
+      submissionDate: "2025-04-03",
+      feedback: "Interesting topic! Consider expanding your literature review.",
+      grade: "B+"
+    },
+  ]
+  
 }

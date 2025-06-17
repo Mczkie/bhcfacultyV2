@@ -90,6 +90,7 @@
         </div>
       </aside>
     </div>
+
     <!-- Activities/Resources Tab -->
     <div *ngIf="isActiveTab('Activities/Resources')">
       <h2>Activities & Resources</h2>
@@ -143,7 +144,7 @@
                   <div class="details-content">
                     <p>{{ resources.resourceDescription }}</p>
                     <a [href]="classResources[0].resourceLink" target="_blank">
-                      Excel Basics
+                      <button mat-button>View Resource</button>
                     </a>
                   </div>
                 </details>
@@ -177,9 +178,16 @@
     </div>
 
     <!-- Student Works Tab -->
-    <div *ngIf="isActiveTab('Student Works')">
-      <h2>Student Works</h2>
-      <p>View and manage student submissions and assignments.</p>
+    <div *ngIf="isActiveTab('Student Works')" class="student-works-container">
+      <mat-card *ngFor="let work of studentWorks" class="student-work-card">
+        <h1>{{ work.workTitle}}</h1>
+        <h1>{{ work.studentName}}</h1>
+        <p>{{ work.submissionDate}}</p>
+        <p>{{ work.feedback }}</p>
+        <b>{{ work.grade }}</b>
+        <button mat-button>View Work</button>
+
+      </mat-card>
     </div>
     <!-- Class List Tab -->
      <div *ngIf="isActiveTab('Class List')">

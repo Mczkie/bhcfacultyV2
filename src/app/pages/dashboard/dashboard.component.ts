@@ -9,7 +9,8 @@ import { Router } from "@angular/router";
 import { RouterLink, RouterLinkActive } from "@angular/router";
 import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 import { timeout } from "rxjs";
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { NgIf } from "@angular/common";
 @Component({
   selector: "app-dashboard",
   imports: [
@@ -20,6 +21,7 @@ import { timeout } from "rxjs";
     RouterLink,
     RouterLinkActive,
     RouterOutlet,
+    NgIf,
   ],
 
   standalone: true,
@@ -38,7 +40,13 @@ export class DashboardComponent {
     },
   ];
 
-  constructor(private router: Router, private snackBar: MatSnackBar) {}
+  constructor(private router: Router, private snackBar: MatSnackBar, private BreakpointObserver: BreakpointObserver) 
+  {
+    this.BreakpointObserver.observe([Breakpoints.Handset])
+    .subscribe(result => {
+      this.isSmallScreen = result.matches;
+    })
+  }
 
   onLogOut() {
     this.onLogoutSnack();
@@ -56,4 +64,6 @@ export class DashboardComponent {
       panelClass: ['success-snackbar']
     })
   }
+
+ isSmallScreen = false;
 }

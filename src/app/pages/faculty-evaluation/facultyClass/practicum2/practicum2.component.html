@@ -7,7 +7,10 @@
 </mat-card>
 
 <mat-card class="evaluation-results">
-  <mat-card-title>Evaluation Results</mat-card-title>
+  <mat-card-title>
+    <button mat-button="outlined" class="outline"><mat-icon  (click)="goBack()">arrow_back</mat-icon></button>
+    Evaluation Results
+  </mat-card-title>
 
   <mat-table [dataSource]="evaluationData" class="mat-elevation-z8">
 

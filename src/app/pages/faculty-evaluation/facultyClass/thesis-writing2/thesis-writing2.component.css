@@ -17,3 +17,7 @@
     color: #3f51b5;
   }
 }
+
+.outline {
+  border: 2px solid #b71c4d;
+}

@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="side" opened class="custom-sidenav">
+  <mat-sidenav #sidenav mode="side" opened class="custom-sidenav" #drawer [opened]="!isSmallScreen" [mode]="isSmallScreen ? 'over' : 'side'">
     <div class="sidenav-profile">
       <div class="avatar">
         <img 
@@ -34,6 +34,9 @@
   <mat-sidenav-content>
     <div class="toolbar-container">
       <mat-toolbar class="toolbar">
+        <button mat-icon-button (click)="drawer.toggle()" *ngIf="isSmallScreen">
+          <mat-icon>menu</mat-icon>
+        </button>
         <div class="toolbar-content">
           <h2 class="user-name" style="font-size: 16px">
             {{ details[0].name }}
