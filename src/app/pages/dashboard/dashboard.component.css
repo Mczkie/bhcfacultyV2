@@ -97,27 +97,52 @@ mat-sidenav-content {
   background-color: #f2f3ef;
 }
 
+/* mobile view */
 @media (max-width: 480px) and (min-width: 300px) {
   .sidenav-container {
     height: auto;
   }
 
   mat-sidenav-content {
-  width: 100%;
-}
+    width: 100%;
+  }
 
-.toolbar {
-  position: fixed;
-  margin: 0 0 2rem;
-  width: 100%;
-}
+  .toolbar {
+    position: fixed;
+    margin: 0 0 2rem;
+    width: 100%;
+  }
 
   mat-sidenav-content {
-  width: 100%;
-  overflow: hidden;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .custom-sidenav {
+    position: fixed;
+  }
 }
 
-.custom-sidenav {
-  position: fixed;
-}
+
+/* ipad view */
+
+@media (max-width: 1366px) and (min-width: 481px) {
+  .sidenav-container {
+    height: auto;
+  }
+
+  .toolbar {
+    position: fixed;
+    margin: 0 0 2rem;
+    width: 89%;
+  }
+
+  mat-sidenav-content {
+    width: 89%;
+    overflow: hidden;
+  }
+
+  .custom-sidenav {
+    position: fixed;
+  }
 }

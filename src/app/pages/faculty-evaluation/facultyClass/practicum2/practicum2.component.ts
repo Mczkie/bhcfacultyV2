@@ -37,7 +37,6 @@ export class Practicum2Component {
 
   goBack() {
     this.router.navigate(['Bataan-heroes-lamp/dashboard', 'faculty-evaluation']);
-
   }
 
   constructor(private router: Router) {}

@@ -575,8 +575,8 @@ details p {
     flex-direction: column;
     overflow: visible;
   }
-  .class-create-posts .post-input {
-    width: 18.3rem;
+   .class-create-posts .post-input {
+    width: 18.8rem;
     position: relative;
   }
 
