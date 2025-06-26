@@ -52,7 +52,7 @@ body {
 mat-sidenav-content {
   z-index: 2;
   background-color: #fff;
-  padding: 0;
+  padding: 30px 0 20px 0;
   width: 90%;
   overflow: auto;
 }
@@ -80,6 +80,7 @@ mat-sidenav-content {
   padding: 0 10px; /* Optional for spacing */
   box-shadow: 0 10px 7px rgba(0, 0, 0, 0.1);
   position: fixed;
+  top: 0px;
 }
 
 .toolbar-content {

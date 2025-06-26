@@ -24,49 +24,8 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'classes',
+        redirectTo: 'faculty-evaluation',
         pathMatch: 'full',
-      },
-      {
-        path: 'classes',
-        component: ClassesComponent,
-        children: [
-          {
-            path: 'thesis-writing2',
-            loadComponent: () =>
-              import(
-                './pages/classes/classPages/thesis-writing2/thesis-writing2.component'
-              ).then((m) => m.ThesisWriting2Component),
-          },
-          {
-            path: 'discrete-mathematics',
-            loadComponent: () =>
-              import(
-                './pages/classes/classPages/discrete-mathematics/discrete-mathematics.component'
-              ).then((m) => m.DiscreteMathematicsComponent),
-          },
-          {
-            path: 'practicum2',
-            loadComponent: () =>
-              import(
-                './pages/classes/classPages/practicum2/practicum2.component'
-              ).then((m) => m.Practicum2Component),
-          },
-          {
-            path: 'intelligent-systems-lec',
-            loadComponent: () =>
-              import(
-                './pages/classes/classPages/intelligent-systems-lec/intelligent-systems-lec.component'
-              ).then((m) => m.IntelligentSystemsLecComponent),
-          },
-          {
-            path: 'intelligent-systems-lab',
-            loadComponent: () =>
-              import(
-                './pages/classes/classPages/intelligent-systems-lab/intelligent-systems-lab.component'
-              ).then((m) => m.IntelligentSystemsLabComponent),
-          },
-        ],
       },
       {
         path: 'faculty-evaluation',

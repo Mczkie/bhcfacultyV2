@@ -1,11 +1,49 @@
 <div class="login-container">
-  <div class="login-card">
-    <h2 class="login-title">Faculty Portal</h2>
+  <section class="aside-section">
+    <div class="aside-header">
+      <img src="logo2.jpg" alt="BHCLOGO" width="150" height="150" />
+      <div class="bhcTag">
+        <h1>BATAAN HEROES COLLEGE</h1>
+        <p>Balanga, Bataan</p>
+        <p>Address info</p>
+      </div>
+    </div>
 
+   <div class="aside-content">
+     <div class="vision-section" >
+      <h2 class="section-title">VISION</h2>
+      <p class="section-content">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat"
+      </p>
+    </div>
+
+    <div class="mission-section">
+      <h2 class="section-title">MISSION</h2>
+      <p class="section-content">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat"
+      </p>
+    </div>
+
+     <div class="goals-section">
+      <h2 class="section-title">GOALS</h2>
+      <p class="section-content">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat"
+      </p>
+    </div>
+   </div>
+  </section>
+
+  <div class="login-card">
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div>
+      <h2 class="login-title">Faculty Portal</h2>
+      <p style="text-align: center;">Evaluation System</p>
+    </div>
       <!-- Username Field -->
       <mat-form-field appearance="outline" class="full-width" color="primary">
-        <mat-label style="font-size: 12px; margin-left: 5px;">Username</mat-label>
+        <mat-label style="font-size: 12px; margin-left: 5px"
+          >Username</mat-label
+        >
         <span matPrefix>&nbsp;</span>
         <input matInput formControlName="username" />
         <span matSuffix>&#64;bhc.com.ph</span>
@@ -29,7 +67,9 @@
           (click)="hidePassword = !hidePassword"
           [attr.aria-label]="'Hide password'"
         >
-          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
         </button>
         <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
           You must enter a value
@@ -42,14 +82,13 @@
         mat-flat-button
         color="primary"
         (click)="onLogin()"
-        
       >
         Login
       </button>
+      <p class="login-footer">
+        Kindly use the <a href="#">link</a> provided to access the previous
+        website.
+      </p>
     </form>
-
-    <p class="login-footer">
-      Kindly use the <a href="#">link</a> provided to access the previous website.
-    </p>
   </div>
 </div>
