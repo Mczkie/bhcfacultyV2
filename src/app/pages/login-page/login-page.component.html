@@ -9,36 +9,49 @@
       </div>
     </div>
 
-   <div class="aside-content">
-     <div class="vision-section" >
-      <h2 class="section-title">VISION</h2>
-      <p class="section-content">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat"
-      </p>
-    </div>
+    <div class="aside-content">
+      <div class="vision-section">
+        <h2 class="section-title">VISION</h2>
+        <p class="section-content">
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat"
+        </p>
+      </div>
 
-    <div class="mission-section">
-      <h2 class="section-title">MISSION</h2>
-      <p class="section-content">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat"
-      </p>
-    </div>
+      <div class="mission-section">
+        <h2 class="section-title">MISSION</h2>
+        <p class="section-content">
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat"
+        </p>
+      </div>
 
-     <div class="goals-section">
-      <h2 class="section-title">GOALS</h2>
-      <p class="section-content">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat"
-      </p>
+      <div class="goals-section">
+        <h2 class="section-title">GOALS</h2>
+        <p class="section-content">
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat"
+        </p>
+      </div>
     </div>
-   </div>
   </section>
 
   <div class="login-card">
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-      <div>
-      <h2 class="login-title">Faculty Portal</h2>
-      <p style="text-align: center;">Evaluation System</p>
-    </div>
+      <div style="text-align: center;">
+        <img src="logo2.jpg" alt="bhc logo" class="logo">
+        <h2 class="login-title">Faculty Portal</h2>
+        <p style="text-align: center">Evaluation System</p>
+      </div>
       <!-- Username Field -->
       <mat-form-field appearance="outline" class="full-width" color="primary">
         <mat-label style="font-size: 12px; margin-left: 5px"
@@ -46,7 +59,7 @@
         >
         <span matPrefix>&nbsp;</span>
         <input matInput formControlName="username" />
-        <span matSuffix>&#64;bhc.com.ph</span>
+        <span matSuffix id="suffix">&#64;bhc.com.ph</span>
         <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
           You must enter a value
         </mat-error>
@@ -56,6 +69,7 @@
       <mat-form-field appearance="outline" class="full-width" color="primary">
         <mat-label>Password</mat-label>
         <input
+          
           matInput
           [type]="hidePassword ? 'password' : 'text'"
           formControlName="password"
