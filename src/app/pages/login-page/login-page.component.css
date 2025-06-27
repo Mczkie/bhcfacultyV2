@@ -2,7 +2,6 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
-  gap: 10px;
   background-color: #f5f7fa;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -10,8 +9,6 @@
 .login-card {
   background: #ffffff;
   padding: 32px 24px;
-  border-radius: 16px;
-
   width: 60%;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
   border: 1px solid #e0e0e0;
@@ -114,7 +111,7 @@ span #suffix {
   margin-left: 200px;
 }
 
-/* media queries */
+/* mobile media queries */
 @media (max-width: 480px) and (min-width: 300px) {
   .aside-section {
     display: none;
@@ -137,6 +134,8 @@ span #suffix {
   }
 }
 
+
+/* ipad or tablet media queries */
 @media (max-width: 1181px) and (min-width: 480px) {
   .aside-section {
     width: 100%;
@@ -172,6 +171,8 @@ span #suffix {
   }
 }
 
+
+/* laptop or desktop media queries */
 @media (max-width: 1920px) and (min-width: 1181px) {
   .aside-section {
     width: 100%;
