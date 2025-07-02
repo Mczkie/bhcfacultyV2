@@ -165,7 +165,7 @@ span #suffix {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     font-size: 1rem;
   }
@@ -202,8 +202,8 @@ span #suffix {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    gap: 30px;
+    padding: 10px;
     font-size: 1rem;
   }
 }

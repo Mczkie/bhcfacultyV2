@@ -186,59 +186,11 @@
   }
 
   .custom-card {
-    height: 20rem;
-    width: 95%;
+    width: 100%;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 0;
   }
 
-  .card-header {
-    color: #fff;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-
-    .class-code {
-      font-weight: bold;
-      font-size: 1.5rem;
-      margin-bottom: 5px;
-    }
-
-    .class-title {
-      font-size: 1.9rem;
-      margin: 5px 0;
-      font-weight: 700;
-    }
-
-    .class-time,
-    .class-room {
-      font-size: 1.3rem;
-      margin: 2px 0;
-    }
-  }
-  .card-footer {
-    background-color: white;
-    padding: 12px 20px;
-    height: 50%;
-    display: flex;
-    justify-content: flex-end;
-
-    button {
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 30px 40px;
-      border: #b71c4d 2px solid;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #b71c4d;
-      color: white;
-    }
-  }
 }
