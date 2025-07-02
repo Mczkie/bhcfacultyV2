@@ -156,7 +156,7 @@ mat-sidenav-content {
   .toolbar {
     position: fixed;
     margin: 0 0 2rem;
-    width: 87%;
+    width: 87.5%;
   }
 
   mat-sidenav-content {

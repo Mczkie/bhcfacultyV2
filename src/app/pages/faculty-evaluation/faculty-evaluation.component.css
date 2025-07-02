@@ -99,3 +99,59 @@
   padding: 0;
 }
 }
+
+/* ipad view */
+
+@media (max-width: 1133px) and (min-width: 481px) {
+  .card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  padding-left: 5px;
+  margin: 0;
+  row-gap: 30px;
+}
+
+.custom-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+}
+/* Ipad 11-inch view */
+@media (max-width: 1180px) and (min-width: 1133px) {
+  .card-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-left: 5px;
+  margin: 0;
+  row-gap: 30px;
+}
+
+.custom-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+}
+
+/* Ipad 13-inch view */
+@media (max-width: 1366px) and (min-width: 1180px) {
+  .card-container {
+  display: grid;
+  grid-template-columns: auto auto ;
+  padding: 10px;
+  row-gap: 30px;
+}
+
+.custom-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+}
