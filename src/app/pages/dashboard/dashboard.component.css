@@ -190,3 +190,24 @@ mat-sidenav-content {
     position: fixed;
   }
 }
+
+@media (max-width: 2376px) and (min-width: 1366px) {
+  .sidenav-container {
+    height: auto;
+  }
+
+  .toolbar {
+    position: fixed;
+    margin: 0 0 2rem;
+    width: 93.5%;
+  }
+
+  mat-sidenav-content {
+    width: 93.5%;
+    overflow: hidden;
+  }
+
+  .custom-sidenav {
+    position: fixed;
+  }
+}
