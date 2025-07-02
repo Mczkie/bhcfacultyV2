@@ -87,6 +87,7 @@
   display: grid;
   grid-template-columns: auto ;
   padding: 0;
+  margin: 0;
   row-gap: 30px;
 }
 
