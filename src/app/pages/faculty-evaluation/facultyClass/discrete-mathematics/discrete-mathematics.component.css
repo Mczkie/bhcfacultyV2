@@ -1,13 +1,13 @@
 .styled-table {
   width: 100%;
-  table-layout: fixed;
   border-collapse: collapse;
-  border: 1px solid #ddd;
+  table-layout: fixed;
+  margin-top: 1rem;
 }
 
 .styled-table th,
 .styled-table td {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
   vertical-align: top;
@@ -17,13 +17,11 @@
   background-color: #f5f5f5;
 }
 
-.styled-table .question-col {
-  width: 90%;
+.question-cell {
   white-space: pre-wrap;
   word-break: break-word;
 }
 
-.styled-table .score-col {
-  width: 10%;
+.score-cell {
   text-align: center;
 }

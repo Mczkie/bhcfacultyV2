@@ -10,15 +10,15 @@
   </mat-card-header>
 
   <mat-card-content>
-    <h3 style="color: red">DIRECTION:</h3>
+    <h3 style="color: red;">DIRECTION:</h3>
     <p>
-      Select the number corresponding to your choice based on the code below. Be
-      fair and honest with your evaluation.
-      <strong style="color: red">All items are required.</strong>
+      Select the number corresponding to your choice based on the code below.
+      Be fair and honest with your evaluation.
+      <strong style="color: red;">All items are required.</strong>
     </p>
 
     <!-- Rating Scale Table -->
-    <table class="styled-table">
+    <table class="rating-scale-table">
       <thead>
         <tr>
           <th>Scale</th>
@@ -34,46 +34,75 @@
       </tbody>
     </table>
 
-    <!-- General Observations -->
     <h3 style="margin-top: 2rem">GENERAL OBSERVATIONS</h3>
-    <table class="styled-table">
-      <thead>
-        <tr>
-          <th style="width: 90%;">Question</th>
-          <th style="width: 10%;">Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of generalObservations">
-          <td class="question-cell">{{ item.question }}</td>
-          <td class="score-cell">{{ item.score }}</td>
-        </tr>
-      </tbody>
+    <table
+      mat-table
+      [dataSource]="generalObservations"
+      class="mat-elevation-z1"
+      style="width: 50%"
+    >
+      <ng-container matColumnDef="question">
+        <th mat-header-cell *matHeaderCellDef style="width: 90%">Question</th>
+        <td
+          class="table-container"
+          mat-cell
+          *matCellDef="let element"
+          style="word-wrap: break-word; white-space: normal; width: 90%; padding: 10px;"
+        >
+          {{ element.question }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef style="width: 10%">Score</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          style="width: 10%"
+          class="container-score"
+        >
+          {{ element.score }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
 
-    <!-- Synchronous Session -->
     <h3 style="margin-top: 2rem">ON SYNCHRONOUS SESSION</h3>
     <p style="font-weight: bold">
       My interest in learning is very much improved because:
     </p>
-    <table class="styled-table">
-      <thead>
-        <tr>
-          <th style="width: 90%;">Question</th>
-          <th style="width: 10%;">Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of syncSession">
-          <td class="question-cell">{{ item.question }}</td>
-          <td class="score-cell">{{ item.score }}</td>
-        </tr>
-      </tbody>
+    <table
+      mat-table
+      [dataSource]="syncSession"
+      class="mat-elevation-z1"
+      style="width: 90%"
+    >
+      <ng-container matColumnDef="question">
+        <th mat-header-cell *matHeaderCellDef style="width: 90%">Question</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          style="word-wrap: break-word; white-space: normal; width: 90%; padding: 10px;"
+        >
+          {{ element.question }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef style="width: 10%">Score</th>
+        <td mat-cell *matCellDef="let element" style="width: 10%">
+          {{ element.score }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
 
-    <p style="margin-top: 1rem">
-      <strong>Average Synchronous Score:</strong>
-      {{ averageScore | number : "1.1-2" }}
+    <p style="margin-top: 1rem;">
+      <strong>Average Synchronous Score:</strong> {{ averageScore | number: '1.1-2' }}
     </p>
   </mat-card-content>
 
