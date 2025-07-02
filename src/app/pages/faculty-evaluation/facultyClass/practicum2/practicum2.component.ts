@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
     MatCardHeader,
     MatCardSubtitle,
     MatTableModule,
-    MatCell,
     MatButton,
     MatCardActions,
     MatCardContent,
@@ -30,6 +29,7 @@ export class Practicum2Component {
     {
       classCode: '123',
       subject: "Thesis Writing 2",
+      totalRespondent: '45',
     },
     {
       title: "RATING SCALE",

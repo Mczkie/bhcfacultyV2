@@ -86,7 +86,7 @@
   .card-container {
   display: grid;
   grid-template-columns: auto ;
-  padding: 15px;
+  padding: 0;
   row-gap: 30px;
 }
 

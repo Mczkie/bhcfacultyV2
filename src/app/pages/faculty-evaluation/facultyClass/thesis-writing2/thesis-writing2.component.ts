@@ -38,6 +38,7 @@ export class ThesisWriting2Component {
     {
       classCode: '123',
       subject: "Thesis Writing 2",
+      totalRespondent: '42',
     },
     {
       title: "RATING SCALE",
@@ -77,8 +78,7 @@ export class ThesisWriting2Component {
         },
         {
           question:
-            "My understanding of the course content is much aided by the instructor’s timely response to,\
-             the questions and problems and provided individual help regarding the course content.",
+            "My understanding of the course content is much aided by the instructor’s timely response to the questions and problems and provided individual help regarding the course content.",
           score: "2.1",
         },
         {

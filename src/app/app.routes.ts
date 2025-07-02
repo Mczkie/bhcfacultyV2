@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { ClassesComponent } from './pages/classes/classes.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { FacultyEvaluationComponent } from './pages/faculty-evaluation/faculty-evaluation.component';
 import { ThesisWriting2Component } from './pages/faculty-evaluation/facultyClass/thesis-writing2/thesis-writing2.component';

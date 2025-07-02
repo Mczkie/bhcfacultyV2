@@ -1,4 +1,3 @@
-import { ClassesComponent } from "./../classes/classes.component";
 import { Component } from "@angular/core";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";

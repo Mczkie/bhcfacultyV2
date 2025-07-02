@@ -21,7 +21,6 @@ import { Router } from "@angular/router";
     MatCardHeader,
     MatCardSubtitle,
     MatTableModule,
-    MatCell,
     MatButton,
     MatCardActions,
     MatCardContent,
@@ -37,6 +36,7 @@ export class IntelligentSystemsLecComponent {
     {
       classCode: "123",
       subject: "Thesis Writing 2",
+      totalRespondent: '29',
     },
     {
       title: "RATING SCALE",

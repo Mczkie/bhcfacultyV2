@@ -20,7 +20,6 @@ import { Router } from "@angular/router";
     MatCardHeader,
     MatCardSubtitle,
     MatTableModule,
-    MatCell,
     MatCardActions,
     MatCardContent,
     CommonModule,
@@ -35,6 +34,7 @@ export class DiscreteMathematicsComponent {
     {
       classCode: '123',
       subject: "Thesis Writing 2",
+      totalRespondent: 35,
     },
     {
       title: "RATING SCALE",
@@ -74,7 +74,8 @@ export class DiscreteMathematicsComponent {
         },
         {
           question:
-            "My understanding of the course content is much aided by the instructor’s timely response to the questions and problems and provided individual help regarding the course content.",
+            "My understanding of the course content is much aided by the instructor’s timely response to the questions" + 
+            "and problems and provided individual help regarding the course content.",
           score: "2.1",
         },
         {

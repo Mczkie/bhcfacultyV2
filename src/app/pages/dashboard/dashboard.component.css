@@ -127,7 +127,50 @@ mat-sidenav-content {
 
 /* ipad view */
 
-@media (max-width: 1366px) and (min-width: 481px) {
+@media (max-width: 1133px) and (min-width: 481px) {
+  .sidenav-container {
+    height: auto;
+  }
+
+  .toolbar {
+    position: fixed;
+    margin: 0 0 2rem;
+    width: 87%;
+  }
+
+  mat-sidenav-content {
+    width: 89%;
+    overflow: hidden;
+  }
+
+  .custom-sidenav {
+    position: fixed;
+  }
+}
+/* Ipad 11-inch view */
+@media (max-width: 1180px) and (min-width: 1133px) {
+  .sidenav-container {
+    height: auto;
+  }
+
+  .toolbar {
+    position: fixed;
+    margin: 0 0 2rem;
+    width: 87%;
+  }
+
+  mat-sidenav-content {
+    width: 89%;
+    overflow: hidden;
+  }
+
+  .custom-sidenav {
+    position: fixed;
+  }
+}
+
+/* Ipad 13-inch view */
+@media (max-width: 1366px) and (min-width: 1180px) {
   .sidenav-container {
     height: auto;
   }

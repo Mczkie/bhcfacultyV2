@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
     MatCardHeader,
     MatCardSubtitle,
     MatTableModule,
-    MatCell,
      MatButton,
     MatCardActions,
     MatCardContent,
@@ -30,6 +29,7 @@ displayedColumns: string[] = ["question", "score"];
     {
       classCode: '123',
       subject: "Thesis Writing 2",
+      totalRespondent: '35',
     },
     {
       title: "RATING SCALE",
